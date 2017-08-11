@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+    <key>Identifier</key>
+    <string>ru.surfstudio.dt.unit.surfApplicationBase</string>
+    <key>Ancestors</key>
+    <array>
+        <string>com.apple.dt.unit.applicationBase</string>
+        <string>com.apple.dt.unit.iosBase</string>
+        <string>com.apple.dt.unit.languageChoice</string>
+    </array>
+    <key>Targets</key>
+    <array>
+        <dict>
+            <key>TargetIdentifier</key>
+            <string>com.apple.dt.cocoaTouchApplicationTarget</string>
+            <key>SharedSettings</key>
+            <dict>
+                <key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+                <string>AppIcon</string>
+                <key>LD_RUNPATH_SEARCH_PATHS</key>
+                <string>$(inherited) @executable_path/Frameworks</string>
+            </dict>
+        </dict>
+    </array>
+    <key>Options</key>
+    <array>
+        <dict>
+            <key>Identifier</key>
+            <string>universalDeviceFamily</string>
+            <key>Name</key>
+            <string>Devices:</string>
+            <key>Description</key>
+            <string>Which device family to create a project for</string>
+            <key>SortOrder</key>
+            <integer>1</integer>
+            <key>Type</key>
+            <string>popup</string>
+            <key>Default</key>
+            <string>Universal</string>
+            <key>Values</key>
+            <array>
+                <string>Universal</string>
+                <string>iPhone</string>
+                <string>iPad</string>
+            </array>
+            <key>Units</key>
+            <dict>
+                <key>iPhone</key>
+                <dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>Info.plist:UISupportedInterfaceOrientations~iPhone</string>
+                    </array>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>Assets.xcassets</key>
+                        <dict>
+                            <key>Path</key>
+                            <string>Images-iPhone.xcassets</string>
+                            <key>SortOrder</key>
+                            <integer>100</integer>
+                        </dict>
+                    </dict>
+                </dict>
+                <key>iPad</key>
+                <dict>
+                    <key>Project</key>
+                    <dict>
+                        <key>SharedSettings</key>
+                        <dict>
+                            <key>TARGETED_DEVICE_FAMILY</key>
+                            <string>2</string>
+                        </dict>
+                    </dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>Info.plist:UISupportedInterfaceOrientations~iPad</string>
+                    </array>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>Assets.xcassets</key>
+                        <dict>
+                            <key>Path</key>
+                            <string>Images-iPad.xcassets</string>
+                            <key>SortOrder</key>
+                            <integer>100</integer>
+                        </dict>
+                    </dict>
+                </dict>
+                <key>Universal</key>
+                <dict>
+                    <key>Project</key>
+                    <dict>
+                        <key>SharedSettings</key>
+                        <dict>
+                            <key>TARGETED_DEVICE_FAMILY</key>
+                            <string>1,2</string>
+                        </dict>
+                    </dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>Info.plist:UISupportedInterfaceOrientations~iPhone</string>
+                        <string>Info.plist:UISupportedInterfaceOrientations~iPad</string>
+                    </array>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>Assets.xcassets</key>
+                        <dict>
+                            <key>Path</key>
+                            <string>Images-Universal.xcassets</string>
+                            <key>SortOrder</key>
+                            <integer>100</integer>
+                        </dict>
+                    </dict>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Identifier</key>
+            <string>hasUnitTests</string>
+            <key>Name</key>
+            <string>Include Unit Tests</string>
+            <key>NotPersisted</key>
+            <false/>
+            <key>SortOrder</key>
+            <integer>100</integer>
+            <key>Type</key>
+            <string>checkbox</string>
+            <key>Default</key>
+            <string>true</string>
+            <key>Units</key>
+            <dict>
+                <key>true</key>
+                <dict>
+                    <key>Components</key>
+                    <array>
+                        <dict>
+                            <key>Identifier</key>
+                            <string>com.apple.dt.unit.cocoaTouchApplicationUnitTestBundle</string>
+                            <key>Name</key>
+                            <string>___PACKAGENAME___Tests</string>
+                        </dict>
+                    </array>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Identifier</key>
+            <string>hasUITests</string>
+            <key>Name</key>
+            <string>Include UI Tests</string>
+            <key>NotPersisted</key>
+            <false/>
+            <key>SortOrder</key>
+            <integer>101</integer>
+            <key>Type</key>
+            <string>checkbox</string>
+            <key>Default</key>
+            <string>true</string>
+            <key>Units</key>
+            <dict>
+                <key>true</key>
+                <dict>
+                    <key>Components</key>
+                    <array>
+                        <dict>
+                            <key>Identifier</key>
+                            <string>com.apple.dt.unit.cocoaTouchApplicationUITestBundle</string>
+                            <key>Name</key>
+                            <string>___PACKAGENAME___UITests</string>
+                        </dict>
+                    </array>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Identifier</key>
+            <string>languageChoice</string>
+            <key>Units</key>
+            <dict>
+                <key>Objective-C</key>
+                <dict>    
+                </dict>
+                <key>Swift</key>
+                <dict>
+                </dict>
+            </dict>
+        </dict>
+    </array>
+    <key>Nodes</key>
+    <array>
+        <string>Info.plist:iPhone</string>
+        <string>Info.plist:UIRequiredDeviceCapabilities:base</string>
+        <string>Info.plist:LaunchScreen</string>
+        <string>Assets.xcassets</string>
+        <string>Base.lproj/LaunchScreen.storyboard</string>
+    </array>
+    <key>Definitions</key>
+    <dict>
+        <key>Info.plist:iPhone</key>
+        <string><![CDATA[<key>LSRequiresIPhoneOS</key>
+<true/>
+]]></string>
+        <key>Info.plist:UIRequiredDeviceCapabilities</key>
+        <dict>
+            <key>Beginning</key>
+            <string><![CDATA[<key>UIRequiredDeviceCapabilities</key>
+<array>]]></string>
+            <key>End</key>
+            <string><![CDATA[</array>]]></string>
+            <key>Indent</key>
+            <integer>1</integer>
+        </dict>
+        <key>Info.plist:UIRequiredDeviceCapabilities:base</key>
+        <string><![CDATA[<string>armv7</string>]]></string>
+        <key>Info.plist:statusBarTintForNavBar</key>
+        <string><![CDATA[<key>UIStatusBarTintParameters</key>
+<dict>
+    <key>UINavigationBar</key>
+    <dict>
+        <key>Style</key>
+        <string>UIBarStyleDefault</string>
+        <key>Translucent</key>
+        <false/>
+    </dict>
+</dict>
+]]></string>
+        <key>Info.plist:LaunchScreen</key>
+        <string><![CDATA[<key>UILaunchStoryboardName</key>
+<string>LaunchScreen</string>
+]]></string>
+        <key>LaunchScreen.storyboard</key>
+        <dict>
+            <key>Path</key>
+            <string>LaunchScreen.storyboard</string>
+            <key>SortOrder</key>
+            <integer>101</integer>
+        </dict>
+        <key>*:implementation:methods:applicationWillResignActive:comments</key>
+        <string>// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+// Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+</string>
+        <key>*:implementation:methods:applicationDidEnterBackground:comments</key>
+        <string>// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+</string>
+        <key>*:implementation:methods:applicationWillEnterForeground:comments</key>
+        <string>// Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.</string>
+        <key>*:implementation:methods:applicationDidBecomeActive:comments</key>
+        <string>// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.</string>
+        <key>*:implementation:methods:applicationWillTerminate:comments</key>
+        <string>// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.</string>
+    </dict>
+</dict>
+</plist>
