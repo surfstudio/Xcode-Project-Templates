@@ -8,7 +8,7 @@
     <string>ru.surfstudio.dt.unit.SurfMVPApplication</string>
     <key>Ancestors</key>
     <array>
-        <string>ru.surfstudio.dt.unit.surfApplicationBase</string>
+        <string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
     </array>
     <key>Concrete</key>
     <true/>
@@ -23,7 +23,6 @@
         <string>Models</string>
         <string>Library</string>
         <string>Application</string>
-        <string>Application/AppDelegate.swift</string>
     </array>
     <key>Definitions</key>
     <dict>
@@ -75,13 +74,6 @@
             <string>Application</string>
             <key>TargetIndices</key>
             <array/>
-        </dict>
-        <key>Application/AppDelegate.swift</key>
-        <dict>
-            <key>Group</key>
-            <string>Application</string>
-            <key>Path</key>
-            <string>AppDelegate.swift</string>
         </dict>
     </dict>
     <key>Options</key>
