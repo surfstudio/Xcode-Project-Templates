@@ -8,7 +8,7 @@
     <string>ru.surfstudio.dt.unit.SurfMVPApplication</string>
     <key>Ancestors</key>
     <array>
-        <string>com.apple.dt.unit.coreDataCocoaTouchApplication</string>
+        <string>ru.surfstudio.dt.unit.surfApplicationBase</string>
     </array>
     <key>Concrete</key>
     <true/>
