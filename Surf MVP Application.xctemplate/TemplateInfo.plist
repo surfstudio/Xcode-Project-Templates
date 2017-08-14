@@ -8,7 +8,7 @@
     <string>ru.surfstudio.dt.unit.SurfMVPApplication</string>
     <key>Ancestors</key>
     <array>
-        <string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
+        <string>ru.surfstudio.dt.unit.surfApplicationBase</string>
     </array>
     <key>Concrete</key>
     <true/>
@@ -16,71 +16,15 @@
     <string></string>
     <key>Nodes</key>
     <array>
-        <string>ThirdParty</string>
-        <string>Services</string>
-        <string>Screens</string>
-        <string>Resources</string>
-        <string>Models</string>
-        <string>Library</string>
-        <string>Application</string>
     </array>
     <key>Definitions</key>
     <dict>
-        <key>Library</key>
-        <dict>
-            <key>Path</key>
-            <string>Library</string>
-            <key>TargetIndices</key>
-            <array/>
-        </dict>
-        <key>Models</key>
-        <dict>
-            <key>Path</key>
-            <string>Models</string>
-            <key>TargetIndices</key>
-            <array/>
-        </dict>
-        <key>Resources</key>
-        <dict>
-            <key>Path</key>
-            <string>Resources</string>
-            <key>TargetIndices</key>
-            <array/>
-        </dict>
-        <key>Screens</key>
-        <dict>
-            <key>Path</key>
-            <string>Screens</string>
-            <key>TargetIndices</key>
-            <array/>
-        </dict>
-        <key>Services</key>
-        <dict>
-            <key>Path</key>
-            <string>Services</string>
-            <key>TargetIndices</key>
-            <array/>
-        </dict>
-        <key>ThirdParty</key>
-        <dict>
-            <key>Path</key>
-            <string>ThirdParty</string>
-            <key>TargetIndices</key>
-            <array/>
-        </dict>
-        <key>Application</key>
-        <dict>
-            <key>Path</key>
-            <string>Application</string>
-            <key>TargetIndices</key>
-            <array/>
-        </dict>
     </dict>
     <key>Options</key>
     <array>
         <dict>
             <key>Identifier</key>
-            <string>VokoderEnabled</string>
+            <string>isUseStoryboards</string>
             <key>Name</key>
             <string>Use Storyboards</string>
             <key>Type</key>
