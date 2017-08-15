@@ -16,9 +16,22 @@
     <string></string>
     <key>Nodes</key>
     <array>
+    	<string>Library/Protocols/ModuleTransitionable.swift</string>
     </array>
     <key>Definitions</key>
     <dict>
+    	<key>Library/Protocols/ModuleTransitionable.swift</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Library</string>
+                <string>Protocols</string>
+            </array>
+            <key>Path</key>
+            <string>ModuleTransitionable.swift</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
     </dict>
     <key>Options</key>
     <array>
