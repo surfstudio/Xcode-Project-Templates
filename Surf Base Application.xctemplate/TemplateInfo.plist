@@ -205,6 +205,8 @@
     </array>
     <key>Nodes</key>
     <array>
+        <string>Surf Base Application.xctemplate
+Surf MVP Application.xctemplate../.gitignore</string>
         <string>Application/AppDelegate.swift</string>
         <string>Application/LaunchScreen.xib</string>
         <string>Library/Base Classes/.gitkeep</string>
@@ -227,6 +229,13 @@
     </array>
     <key>Definitions</key>
     <dict>
+        <key>../.gitignore</key>
+            <dict>
+                <key>Path</key>
+                    <string>.gitignore</string>
+                <key>Group</key>
+                    <string>Non-iOS Resources</string>
+            </dict>
         <key>Library</key>
         <dict>
             <key>Path</key>
@@ -294,13 +303,6 @@
             <key>TargetIndices</key>
             <array/>
         </dict>
-        <key>Models</key>
-        <dict>
-            <key>Path</key>
-            <string>Models</string>
-            <key>TargetIndices</key>
-            <array/>
-        </dict>
         <key>Models/Entry/.gitkeep</key>
         <dict>
             <key>Group</key>
@@ -324,11 +326,6 @@
             <string>Models/Entity/.gitkeep</string>
             <key>TargetIndices</key>
             <array/>
-        </dict>
-        <key>Resources</key>
-        <dict>
-            <key>Path</key>
-            <string>Resources</string>
         </dict>
         <key>Resources/Strings/.gitkeep</key>
         <dict>
@@ -366,11 +363,6 @@
             <key>TargetIndices</key>
             <array/>
         </dict>
-        <key>Screens</key>
-        <dict>
-            <key>Path</key>
-            <string>Screens</string>
-        </dict>
         <key>Screens/.gitkeep</key>
         <dict>
             <key>Group</key>
@@ -381,11 +373,6 @@
             <string>Screens/.gitkeep</string>
             <key>TargetIndices</key>
             <array/>
-        </dict>
-        <key>Services</key>
-        <dict>
-            <key>Path</key>
-            <string>Services</string>
         </dict>
         <key>Services/.gitkeep</key>
         <dict>
@@ -398,11 +385,6 @@
             <key>TargetIndices</key>
             <array/>
         </dict>
-        <key>ThirdParty</key>
-        <dict>
-            <key>Path</key>
-            <string>ThirdParty</string>
-        </dict>
         <key>ThirdParty/.gitkeep</key>
         <dict>
             <key>Group</key>
@@ -413,11 +395,6 @@
             <string>ThirdParty/.gitkeep</string>
             <key>TargetIndices</key>
             <array/>
-        </dict>
-        <key>Application</key>
-        <dict>
-            <key>Path</key>
-            <string>Application</string>
         </dict>
         <key>Application/AppDelegate.swift</key>
         <dict>
