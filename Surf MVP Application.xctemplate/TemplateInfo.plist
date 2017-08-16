@@ -111,11 +111,11 @@ fi</string>
                             </array>
                             <key>Nodes</key>
                                 <array>
-                                    <string>Non-iOS Resources/.swiftlint.yml</string>
+                                    <string>../.swiftlint.yml</string>
                                 </array>
                             <key>Definitions</key>
                                 <dict>
-                                    <key>Non-iOS Resources/.swiftlint.yml</key>
+                                    <key>../.swiftlint.yml</key>
                                         <dict>
                                             <key>Path</key>
                                                 <string>.swiftlint.yml</string>
