@@ -16,10 +16,16 @@
     <string></string>
     <key>Nodes</key>
     <array>
+        <string>../Podfile:swiftbasics</string>
     	<string>Library/Protocols/ModuleTransitionable.swift</string>
     </array>
     <key>Definitions</key>
     <dict>
+        <key>../Podfile:swiftbasics</key>
+        <string>    use_frameworks!
+
+    pod &apos;Crashlytics&apos;
+    pod &apos;Fabric&apos;</string>
     	<key>Library/Protocols/ModuleTransitionable.swift</key>
         <dict>
             <key>Group</key>
@@ -123,6 +129,39 @@ fi</string>
                                                 <string>Non-iOS Resources</string>
                                         </dict>
                                 </dict>
+                    </dict>
+                </dict>
+        </dict>
+        <dict>
+            <key>Identifier</key>
+                <string>isUseAlamofire</string>
+            <key>Name</key>
+                <string>Use Alamofire+AlamofireImage+AlamofireNetworkActivityIndicator</string>
+            <key>Type</key>
+                <string>checkbox</string>
+            <key>Default</key>
+                <string>false</string>
+            <key>NotPersisted</key>
+                <true/>
+            <key>Units</key>
+                <dict>
+                    <key>true</key>
+                    <dict>
+                        <key>Nodes</key>
+                            <array>
+                                <string>../Podfile:afpod</string>
+                                <string>../Podfile:afimage</string>
+                                <string>../Podfile:afntwrkactivityindicator</string>
+                            </array>
+                        <key>Definitions</key>
+                            <dict>
+                                <key>../Podfile:afpod</key>
+                                    <string>    pod &apos;Alamofire&apos;, &apos;~> 4.0&apos;</string>
+                                <key>../Podfile:afimage</key>
+                                    <string>    pod &apos;AlamofireImage&apos;, &apos;~> 3.2&apos;</string>
+                                <key>../Podfile:afntwrkactivityindicator</key>
+                                    <string>    pod &apos;AlamofireNetworkActivityIndicator&apos;, &apos;~> 2.1&apos;</string>
+                            </dict>
                     </dict>
                 </dict>
         </dict>
