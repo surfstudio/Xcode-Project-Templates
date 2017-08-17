@@ -165,6 +165,40 @@ fi</string>
                     </dict>
                 </dict>
         </dict>
+        <dict>
+            <key>Identifier</key>
+                <string>isCreateRambafile</string>
+            <key>Name</key>
+                <string>Create Rambafile</string>
+            <key>Type</key>
+                <string>checkbox</string>
+            <key>Default</key>
+                <string>false</string>
+            <key>NotPersisted</key>
+                <true/>
+            <key>Units</key>
+                <dict>
+                    <key>true</key>
+                    <dict>
+                        <key>Nodes</key>
+                            <array>
+                                <string>../Rambafile</string>
+                            </array>
+                        <key>Definitions</key>
+                            <dict>
+                                <key>../Rambafile</key>
+                                    <dict>
+                                        <key>TargetIndices</key>
+                                            <array/>
+                                        <key>Path</key>
+                                            <string>Rambafile</string>
+                                        <key>Group</key>
+                                            <string>Non-iOS Resources</string>
+                                    </dict> 
+                            </dict>
+                    </dict>
+                </dict>
+        </dict>
     </array>
 </dict>
 </plist>

@@ -1,0 +1,37 @@
+### Headers settings
+company: ___ORGANIZATIONNAME___
+
+### Xcode project settings
+project_name: ___PACKAGENAME___
+xcodeproj_path: ___PACKAGENAME___.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: ___PACKAGENAME___
+
+# The file path for new modules
+project_file_path: ___PACKAGENAME___/Screens
+
+# The Xcode group path to new modules
+project_group_path: ___PACKAGENAME___/Screens
+
+### Tests generation settings section
+# The tests target name
+test_target: ___PACKAGENAME___Tests
+
+# The file path for new tests
+test_file_path: ___PACKAGENAME___Tests/Tests/Screens
+
+# The Xcode group path to new tests
+test_group_path: ___PACKAGENAME___Tests/Tests/Screens
+
+### Dependencies settings section
+podfile_path: Podfile
+
+### Catalogs
+catalogs:
+- 'https://github.com/ismetanin/generamba-modules'
+
+### Templates
+templates:
+- {name: surf_mvp_module}
