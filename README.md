@@ -29,7 +29,7 @@ To install or update the templates in Xcode:
   <img width="730" alt="screen shot 2017-08-20 at 12 35 40" src="https://user-images.githubusercontent.com/11653316/29493709-433ccf98-85a4-11e7-81cf-9d9565cdd56b.png">
 
 ## After creating a project
-1. Remove unnecessary files
+### Remove unnecessary files
 * Open up the .xcodeproj file.
 * Remove the Non-iOS Resources folder from the Xcode project by selecting that folder in the sidebar, right clicking, then selecting delete from the menu, then selecting "Remove References" in the dialog that pops up:
 <img width="551" alt="screen shot 2017-08-21 at 20 30 09" src="https://user-images.githubusercontent.com/11653316/29531076-9b90168a-86af-11e7-87af-7477b4ab5b58.png">
