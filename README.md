@@ -17,7 +17,7 @@ Xcode 8 or later.
   * Storyboards - creates Main.storyboard file
   * SwiftLint - adds .swiftlint.yml file and Run Script to Build phases that will show error if SwiftLint not installed
   * Alamofire - adds Alamofire, AlamofireImage and AlamofireNetworkActivityIndicator pods
-  * Rambafile - creates Rambafile with with surf_mvp_module template and paths to project target and tests target
+  * Rambafile - creates Rambafile with surf_mvp_module template and paths to project target and tests target
 
 ## Installation
 To install or update the templates in Xcode:
