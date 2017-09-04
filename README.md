@@ -33,9 +33,3 @@ To install or update the templates in Xcode:
 * Open up the .xcodeproj file.
 * Remove the Non-iOS Resources folder from the Xcode project by selecting that folder in the sidebar, right clicking, then selecting delete from the menu, then selecting "Remove References" in the dialog that pops up:
 <img width="551" alt="screen shot 2017-08-21 at 20 30 09" src="https://user-images.githubusercontent.com/11653316/29531076-9b90168a-86af-11e7-87af-7477b4ab5b58.png">
-
-* Remove the references to the .gitkeep files which were used to create the folder/group hierarchy, but leave the groups themselves
-<img width="235" alt="screen shot 2017-08-21 at 20 33 16" src="https://user-images.githubusercontent.com/11653316/29531169-0e8280ec-86b0-11e7-8577-ad0aa0e8b21d.png">
-
-* Once those files are removed your groups should look like this
-<img width="170" alt="screen shot 2017-08-21 at 20 35 12" src="https://user-images.githubusercontent.com/11653316/29531215-47fef256-86b0-11e7-9ddc-bb835f96c748.png">
