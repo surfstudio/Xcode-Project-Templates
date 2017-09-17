@@ -22,7 +22,7 @@ Xcode 8 or later.
 ## Installation
 To install or update the templates in Xcode:
   * Download this project
-  * On the command line, cd into the directory with templates and write `$sh ./install.sh`
+  * On the command line, cd into the directory with templates and write `sh ./install.sh`
  <img width="569" alt="screen shot 2017-08-21 at 20 41 30" src="https://user-images.githubusercontent.com/11653316/29531419-241a33ea-86b1-11e7-8c7d-4b1e54e61f7a.png">
   
   * Launch Xcode and select create a new Xcode project and you'll see the new category "User Templates" that will contain new templates
