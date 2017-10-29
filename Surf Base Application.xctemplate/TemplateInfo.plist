@@ -207,7 +207,7 @@
     <array>
         <string>../Podfile</string>
         <string>../.gitignore</string>
-        <string>Third Party</string>
+        <string>Third Party/.gitkeep</string>
         <string>Services</string>
         <string>Screens</string>
         <string>Resources</string>
@@ -292,10 +292,14 @@ end
             <key>TargetIndices</key>
             <array/>
         </dict>
-        <key>Third Party</key>
+        <key>Third Party/.gitkeep</key>
         <dict>
+        	<key>Group</key>
+			<array>
+				<string>Third Party</string>
+			</array>
             <key>Path</key>
-            <string>Third Party</string>
+            <string>Third Party/.gitkeep</string>
             <key>TargetIndices</key>
             <array/>
         </dict>
