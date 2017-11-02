@@ -10,7 +10,7 @@ cp -R "Surf MVP Application.xctemplate" "${installDirectory}"
 cp -R "Surf Application Unit Test Base.xctemplate" "${installDirectory}"
 
 mkdir -p "${baseAppDirectory}/Application"
-mkdir -p "${baseAppDirectory}/Library/BaseClasses"
+mkdir -p "${baseAppDirectory}/Library/Base Classes"
 mkdir -p "${baseAppDirectory}/Library/Extensions"
 mkdir -p "${baseAppDirectory}/Library/Protocols"
 mkdir -p "${baseAppDirectory}/Library/Reusable Layer"
