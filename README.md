@@ -27,6 +27,14 @@ To install or update the templates in Xcode:
   
   * Launch Xcode and select create a new Xcode project and you'll see the new category "User Templates" that will contain new templates
   <img width="730" alt="screen shot 2017-08-20 at 12 35 40" src="https://user-images.githubusercontent.com/11653316/29493709-433ccf98-85a4-11e7-81cf-9d9565cdd56b.png">
+  
+## Important
+Templates works correctly only in Xcode 8. You should create project in Xcode 8 after that you'll be able use the new versions of Xcode.
+
+### Xcode 9 problems resolving:
+After that you've opened Xcode 9 you could see folders without link to existing folder.
+To fix it you need:
+
 
 ## After creating a project
 ### Remove unnecessary files
