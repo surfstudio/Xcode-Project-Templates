@@ -207,21 +207,44 @@
     <array>
         <string>../Podfile</string>
         <string>../.gitignore</string>
+
+        <string>Third Party</string>
         <string>Third Party/.gitkeep</string>
+
         <string>Services</string>
+        <string>Services/.gitkeep</string>
+
         <string>Screens</string>
+        <string>Screens/.gitkeep</string>
+
         <string>Resources</string>
+        <string>Resources/Strings/.gitkeep</string>
+        <string>Resources/Images/.gitkeep</string>
+        <string>Resources/Constants/.gitkeep</string>
+        <string>Resources/Fonts/.gitkeep</string>
+
         <string>Models</string>
+        <string>Models/Entity/.gitkeep</string>
+        <string>Models/Entry/.gitkeep</string>
+
         <string>Library</string>
+        <string>Library/Base Classes/.gitkeep</string>
+        <string>Library/Utils/.gitkeep</string>
+        <string>Library/Extensions/.gitkeep</string>
+        <string>Library/Reusable Layer/.gitkeep</string>
+        <string>Library/Protocols/.gitkeep</string>
+
         <string>Application</string>
         <string>Application/AppDelegate.swift</string>
         <string>Application/LaunchScreen.xib</string>
+
         <string>Info.plist:iPhone</string>
         <string>Info.plist:UIRequiredDeviceCapabilities:base</string>
         <string>Info.plist:LaunchScreen</string>
     </array>
     <key>Definitions</key>
     <dict>
+
         <key>../Podfile</key>
         <dict>
             <key>TargetIndices</key>
@@ -250,6 +273,7 @@ end
                     <string>Non-iOS Resources</string>
                 </array>
         </dict>
+
         <key>../.gitignore</key>
             <dict>
                 <key>Path</key>
@@ -257,6 +281,7 @@ end
                 <key>Group</key>
                     <string>Non-iOS Resources</string>
             </dict>
+
         <key>Library</key>
         <dict>
             <key>Path</key>
@@ -264,6 +289,72 @@ end
             <key>TargetIndices</key>
             <array/>
         </dict>
+
+        <key>Library/Base Classes/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Library</string>
+                <string>Base Classes</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
+        <key>Library/Utils/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Library</string>
+                <string>Utils</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
+        <key>Library/Extensions/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Library</string>
+                <string>Extensions</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
+        <key>Library/Reusable Layer/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Library</string>
+                <string>Reusable Layer</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
+        <key>Library/Protocols/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Library</string>
+                <string>Protocols</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
         <key>Models</key>
         <dict>
             <key>Path</key>
@@ -271,6 +362,33 @@ end
             <key>TargetIndices</key>
             <array/>
         </dict>
+
+        <key>Models/Entity/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Models</string>
+                <string>Entity</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
+        <key>Models/Entry/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Models</string>
+                <string>Entry</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
         <key>Resources</key>
         <dict>
             <key>Path</key>
@@ -278,6 +396,59 @@ end
             <key>TargetIndices</key>
             <array/>
         </dict>
+
+        <key>Resources/Strings/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Resources</string>
+                <string>Strings</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
+        <key>Resources/Images/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Resources</string>
+                <string>Images</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
+        <key>Resources/Constants/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Resources</string>
+                <string>Constants</string>
+            </array>
+            <key>Path</key>
+            <string>.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
+        <key>Resources/Fonts/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <array>
+                <string>Resources</string>
+                <string>Fonts</string>
+            </array>
+            <key>Path</key>
+            <string>../.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
         <key>Screens</key>
         <dict>
             <key>Path</key>
@@ -285,6 +456,17 @@ end
             <key>TargetIndices</key>
             <array/>
         </dict>
+
+        <key>Screens/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <string>Screens</string>
+            <key>Path</key>
+            <string>../.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
         <key>Services</key>
         <dict>
             <key>Path</key>
@@ -292,17 +474,35 @@ end
             <key>TargetIndices</key>
             <array/>
         </dict>
-        <key>Third Party/.gitkeep</key>
+
+        <key>Services/.gitkeep</key>
         <dict>
-        	<key>Group</key>
-			<array>
-				<string>Third Party</string>
-			</array>
+            <key>Group</key>
+            <string>Services</string>
             <key>Path</key>
-            <string>Third Party/.gitkeep</string>
+            <string>../.gitkeep</string>
             <key>TargetIndices</key>
             <array/>
         </dict>
+
+        <key>Third Party</key>
+        <dict>
+            <key>Path</key>
+            <string>Third Party</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
+        <key>Third Party/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <string>Third Party</string>
+            <key>Path</key>
+            <string>../.gitkeep</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
+
         <key>Application</key>
         <dict>
             <key>Path</key>
@@ -310,6 +510,7 @@ end
             <key>TargetIndices</key>
             <array/>
         </dict>
+
         <key>Application/AppDelegate.swift</key>
         <dict>
             <key>Group</key>
@@ -317,6 +518,7 @@ end
             <key>Path</key>
             <string>AppDelegate.swift</string>
         </dict>
+
         <key>Application/LaunchScreen.xib</key>
         <dict>
             <key>Group</key>
@@ -324,6 +526,7 @@ end
             <key>Path</key>
             <string>LaunchScreen.xib</string>
         </dict>
+
         <key>Info.plist:iPhone</key>
         <string><![CDATA[<key>LSRequiresIPhoneOS</key>
 <true/>
