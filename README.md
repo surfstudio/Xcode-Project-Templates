@@ -20,11 +20,19 @@ Xcode 8 or later.
   * Rambafile - creates Rambafile with surf_mvp_module template and paths to project target and tests target
 
 ## Installation
-To install or update the templates in Xcode:
-  * Download this project
-  * On the command line, cd into the directory with templates and write `sh ./install.sh`
+To install or update the templates you need:
+  * Quit Xcode
+  * On the command line:
+  ```
+  git clone https://github.com/surfstudio/Xcode-Project-Templates
+  sh ./install.sh
+  rm -rf Xcode-Project-Templates
+  ```
+  Or if you have a cloned repository:
+  * On the command line, cd into the directory with cloned templates and write `sh ./install.sh`
  <img width="569" alt="screen shot 2017-08-21 at 20 41 30" src="https://user-images.githubusercontent.com/11653316/29531419-241a33ea-86b1-11e7-8c7d-4b1e54e61f7a.png">
-  
+ 
+After that:
   * Launch Xcode and select create a new Xcode project and you'll see the new category "User Templates" that will contain new templates
   <img width="730" alt="screen shot 2017-08-20 at 12 35 40" src="https://user-images.githubusercontent.com/11653316/29493709-433ccf98-85a4-11e7-81cf-9d9565cdd56b.png">
 
