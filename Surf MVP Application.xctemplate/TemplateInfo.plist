@@ -17,7 +17,6 @@
     <key>Nodes</key>
     <array>
         <string>../Podfile:swiftbasics</string>
-    	<string>Library/Protocols/ModuleTransitionable.swift</string>
     </array>
     <key>Definitions</key>
     <dict>
@@ -26,19 +25,46 @@
 
     pod &apos;Crashlytics&apos;
     pod &apos;Fabric&apos;</string>
-    	<key>Library/Protocols/ModuleTransitionable.swift</key>
-        <dict>
-            <key>Group</key>
-            <array>
-                <string>Library</string>
-                <string>Protocols</string>
-            </array>
-            <key>Path</key>
-            <string>ModuleTransitionable.swift</string>
-        </dict>
+    	
     </dict>
     <key>Options</key>
     <array>
+        <dict>
+            <key>Identifier</key>
+            <string>languageChoice</string>
+            <key>Units</key>
+            <dict>
+                <key>Objective-C</key>
+                <dict>
+                <key>Nodes</key>
+                    <array>
+                    </array>
+                    <key>Definitions</key>
+                    <dict>
+                    </dict>    
+                </dict>
+                <key>Swift</key>
+                <dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>Library/Protocols/ModuleTransitionable.swift</string>
+                    </array>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>Library/Protocols/ModuleTransitionable.swift</key>
+                        <dict>
+                            <key>Group</key>
+                            <array>
+                                <string>Library</string>
+                                <string>Protocols</string>
+                            </array>
+                            <key>Path</key>
+                                <string>ModuleTransitionable.swift</string>
+                        </dict>
+                    </dict>
+                </dict>
+            </dict>
+        </dict>
         <dict>
             <key>Identifier</key>
             <string>isUseStoryboards</string>

@@ -52,6 +52,7 @@ protocol ModuleTransitionable: class {
     func dismissView(animated: Bool, completion: (() -> Void)?)
     func presentModule(_ module: UIViewController, animated: Bool, completion: (() -> Void)?)
     func pop(animated: Bool)
+    func push(module: UIViewController, animated: Bool)
     func push(module: UIViewController, animated: Bool, hideTabBar: Bool)
 }
 
