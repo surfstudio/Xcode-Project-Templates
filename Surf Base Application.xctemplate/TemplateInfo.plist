@@ -195,10 +195,82 @@
             <key>Units</key>
             <dict>
                 <key>Objective-C</key>
-                <dict>    
+                <dict>
+                <key>Nodes</key>
+                    <array>
+                        <string>main.m:comments</string>
+                        <string>main.m:imports:importCocoa</string>
+                        <string>main.m:imports:importHeader:AppDelegate.h</string>
+                        <string>main.m:main:UIApplicationMain</string>
+                        <string>AppDelegate.h:comments</string>
+                        <string>AppDelegate.h:imports:importCocoa</string>
+                        <string>AppDelegate.h:interface(AppDelegate : UIResponder &lt;UIApplicationDelegate&gt;)</string>
+                        <string>AppDelegate.h:interface:window</string>
+                        <string>AppDelegate.m:comments</string>
+                        <string>AppDelegate.m:imports:importHeader:AppDelegate.h</string>
+                        <string>AppDelegate.m:extension</string>
+                        <string>AppDelegate.m:implementation:synthesize</string>
+                        <string>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions(- (BOOL\)application:(UIApplication *\)application didFinishLaunchingWithOptions:(NSDictionary *\)launchOptions)</string>
+                        <string>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:body</string>
+                        <string>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:return</string>
+                        <string>AppDelegate.m:implementation:methods:applicationWillResignActive(- (void\)applicationWillResignActive:(UIApplication *\)application)</string>
+                        <string>AppDelegate.m:implementation:methods:applicationWillResignActive:comments</string>
+                        <string>AppDelegate.m:implementation:methods:applicationDidEnterBackground(- (void\)applicationDidEnterBackground:(UIApplication *\)application)</string>
+                        <string>AppDelegate.m:implementation:methods:applicationDidEnterBackground:comments</string>
+                        <string>AppDelegate.m:implementation:methods:applicationWillEnterForeground(- (void\)applicationWillEnterForeground:(UIApplication *\)application)</string>
+                        <string>AppDelegate.m:implementation:methods:applicationWillEnterForeground:comments</string>
+                        <string>AppDelegate.m:implementation:methods:applicationDidBecomeActive(- (void\)applicationDidBecomeActive:(UIApplication *\)application)</string>
+                        <string>AppDelegate.m:implementation:methods:applicationDidBecomeActive:comments</string>
+                        <string>AppDelegate.m:implementation:methods:applicationWillTerminate(- (void\)applicationWillTerminate:(UIApplication *\)application)</string>
+                        <string>AppDelegate.m:implementation:methods:applicationWillTerminate:comments</string>
+                    </array>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>main.m:main</key>
+                        <dict>
+                            <key>Beginning</key>
+                            <string>int main(int argc, char * argv[]) {</string>
+                            <key>End</key>
+                            <string>}</string>
+                            <key>Indent</key>
+                            <integer>1</integer>
+                        </dict>
+                        <key>main.m:main:UIApplicationMain</key>
+                        <string>@autoreleasepool {
+    return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+}
+</string>
+                        <key>AppDelegate.h:interface:window</key>
+                        <string>@property (strong, nonatomic) UIWindow *window;
+</string>
+                        <key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+                        <string>// Override point for customization after application launch.</string>
+                        <key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
+                        <string>return YES;</string>
+                        <key>*:implementation:methods:viewDidLoad:super</key>
+                        <string>[super viewDidLoad];
+// Do any additional setup after loading the view, typically from a nib.</string>
+                        <key>*:implementation:methods:didReceiveMemoryWarning:super</key>
+                        <string>[super didReceiveMemoryWarning];
+// Dispose of any resources that can be recreated.</string>
+                    </dict>    
                 </dict>
                 <key>Swift</key>
                 <dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>Application/AppDelegate.swift</string>
+                    </array>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>Application/AppDelegate.swift</key>
+                            <dict>
+                                <key>Group</key>
+                                    <string>Application</string>
+                                <key>Path</key>
+                                    <string>AppDelegate.swift</string>
+                            </dict>
+                    </dict>
                 </dict>
             </dict>
         </dict>
@@ -235,7 +307,6 @@
         <string>Library/Protocols/.gitkeep</string>
 
         <string>Application</string>
-        <string>Application/AppDelegate.swift</string>
         <string>Application/LaunchScreen.xib</string>
 
         <string>Info.plist:iPhone</string>
@@ -509,14 +580,6 @@ end
             <string>Application</string>
             <key>TargetIndices</key>
             <array/>
-        </dict>
-
-        <key>Application/AppDelegate.swift</key>
-        <dict>
-            <key>Group</key>
-            <string>Application</string>
-            <key>Path</key>
-            <string>AppDelegate.swift</string>
         </dict>
 
         <key>Application/LaunchScreen.xib</key>
