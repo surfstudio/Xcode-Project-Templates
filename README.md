@@ -24,8 +24,11 @@ To install or update the templates you need:
   * Quit Xcode
   * On the command line:
   ```
+  cd ~/Downloads
   git clone https://github.com/surfstudio/Xcode-Project-Templates
+  cd Xcode-Project-Templates
   sh ./install.sh
+  cd ..
   rm -rf Xcode-Project-Templates
   ```
   Or if you have a cloned repository:
