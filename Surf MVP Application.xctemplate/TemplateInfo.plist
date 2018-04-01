@@ -17,6 +17,9 @@
     <key>Nodes</key>
     <array>
         <string>../Podfile:swiftbasics</string>
+        <string>../Makefile</string>
+        <string>../Gemfile</string>
+        <string>hooks/commit-msg</string>
     </array>
     <key>Definitions</key>
     <dict>
@@ -25,7 +28,29 @@
 
     pod &apos;Crashlytics&apos;
     pod &apos;Fabric&apos;</string>
-    	
+    	<key>../Makefile</key>
+        <dict>
+            <key>Path</key>
+            <string>Makefile</string>
+            <key>Group</key>
+            <string>Non-iOS Resources</string>
+        </dict>
+        <key>../Gemfile</key>
+        <dict>
+            <key>Path</key>
+            <string>Gemfile</string>
+            <key>Group</key>
+            <string>Non-iOS Resources</string>
+        </dict>
+        <key>hooks/commit-msg</key>
+        <dict>
+            <key>Group</key>
+            <string>hooks</string>
+            <key>Path</key>
+            <string>../commit-msg</string>
+            <key>TargetIndices</key>
+            <array/>
+        </dict>
     </dict>
     <key>Options</key>
     <array>
