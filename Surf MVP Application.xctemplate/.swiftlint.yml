@@ -38,7 +38,7 @@ whitelist_rules:
     - vertical_whitespace
     - void_return
     - weak_delegate
-
+    - custom_rules
 
     # - missing_docs 
 
@@ -76,7 +76,57 @@ opt_in_rules: # some rules are only opt-in
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - fastlane
   - Pods
+  - .bundle
 
+custom_rules:
+  image_name_initialization: # Disable UIImage init from name
+      included: ".*.swift"
+      name: "Image initialization"
+      regex: 'UIImage\(named:[^)]+\)'
+      message: "Use UIImage(assetName: ) instead"
+      severity: error
+
+  realm_in_ui:
+      included: "Screens/.*.swift|User Stories/.*.swift"
+      name: "Realm can be used only in services"
+      regex: "Realm"
+      message: "Realm can be used only in serivces"
+      severity: error
+
+  disclosure_of_view_details:
+    included: ".*ViewOutput.swift|.*ViewInput.swift"
+    name: "Details opening in View protocols"
+    regex: "cell|Cell|button|Button|Table|tableView"
+    message: "The disclosure of details the implementation should be avoided"
+    severity: error
+
+  view_protocol_error:
+    included: ".*ViewOutput.swift|.*ViewInput.swift"
+    name: "Property in view protocol"
+    regex: " var "
+    message: "View protocol should contains only methods"
+    severity: error
+
+  router_protocol_error:
+    included: ".*RouterInput.swift"
+    name: "View in Router protocol"
+    regex: "view|View"
+    message: "Router protocol methods should contains `Module` instead `View`"
+    severity: error
+
+  open_iboutlets:
+    included: ".*.swift"
+    name: "IBOutlet opening"
+    regex: "@IBOutlet weak var"
+    message: "IBOutlet should be private or fileprivate"
+    severity: error
+
+  open_ibaction:
+    included: ".*.swift"
+    name: "IBAction opening"
+    regex: "@IBAction func"
+    message: "IBAction should be private or fileprivate"
+    severity: error
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
 # force_cast: warning # implicitly

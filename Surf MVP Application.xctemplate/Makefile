@@ -10,8 +10,8 @@ init:
 
 	# Install git hooks
 	mkdir -p .git/hooks
-	chmod +x hooks/commit-msg
-	ln -s -f ../../hooks/commit-msg .git/hooks/commit-msg
+	chmod +x commit-msg
+	ln -s -f ../../commit-msg .git/hooks/commit-msg
 
 screen: 
 	bundle exec generamba gen $(modName) surf_mvp_module
@@ -19,5 +19,5 @@ screen:
 build:
 	bundle exec fastlane build clean:true
 
-resynx:
-	--exclusion "___PACKAGENAME___/Non-iOS Resources" ___PACKAGENAME___.xcodeproj
+synx:
+	bundle exec synx --exclusion "___PACKAGENAME___/Non-iOS Resources" ___PACKAGENAME___.xcodeproj

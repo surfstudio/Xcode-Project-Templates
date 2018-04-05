@@ -305,9 +305,20 @@
 			<key>TargetIndices</key>
 			<array/>
 			<key>Beginning</key>
-			<string>platform :ios, &apos;9.0&apos;
+			<string>platform :ios, &apos;10.0&apos;
+
+inhibit_all_warnings!
+
+def utils
+    pod 'SwiftGen', '~> 5.2.1'
+    pod 'SwiftLint', '~> 0.25.0'
+end
 
 target &apos;___PACKAGENAME___&apos; do
+
+    use_frameworks!
+
+    utils
                 </string>
 			<key>End</key>
 			<string>

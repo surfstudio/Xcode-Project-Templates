@@ -19,13 +19,20 @@
         <string>../Podfile:swiftbasics</string>
         <string>../Makefile</string>
         <string>../Gemfile</string>
-        <string>hooks/commit-msg</string>
+        <string>../commit-msg</string>
+        <string>../.swiftlint.yml</string>
     </array>
     <key>Definitions</key>
     <dict>
+        <key>../.swiftlint.yml</key>
+        <dict>
+            <key>Path</key>
+            <string>.swiftlint.yml</string>
+            <key>Group</key>
+            <string>Non-iOS Resources</string>
+        </dict>
         <key>../Podfile:swiftbasics</key>
-        <string>    use_frameworks!
-
+        <string>
     pod &apos;Crashlytics&apos;
     pod &apos;Fabric&apos;</string>
     	<key>../Makefile</key>
@@ -42,16 +49,32 @@
             <key>Group</key>
             <string>Non-iOS Resources</string>
         </dict>
-        <key>hooks/commit-msg</key>
+        <key>../commit-msg</key>
         <dict>
-            <key>Group</key>
-            <string>hooks</string>
             <key>Path</key>
-            <string>../commit-msg</string>
-            <key>TargetIndices</key>
-            <array/>
+            <string>commit-msg</string>
+            <key>Group</key>
+            <string>Non-iOS Resources</string>
         </dict>
     </dict>
+    <key>Targets</key>
+        <array>
+            <dict>
+                <key>BuildPhases</key>
+                    <array>
+                        <dict>
+                            <key>Class</key>
+                            <string>ShellScript</string>
+                            <key>Name</key>
+                            <string>Swift Lint</string>
+                            <key>ShellPath</key>
+                            <string>/bin/sh</string>
+                            <key>ShellScript</key>
+                            <string>$PODS_ROOT/SwiftGen/bin/swiftgen</string>
+                        </dict>
+                    </array>
+            </dict>
+        </array>
     <key>Options</key>
     <array>
         <dict>
@@ -125,61 +148,6 @@
                     </dict>
                 </dict>
             </dict>
-        </dict>
-        <dict>
-            <key>Identifier</key>
-                <string>isUseSwiftLint</string>
-            <key>Name</key>
-                <string>Use SwiftLint</string>
-            <key>Type</key>
-                <string>checkbox</string>
-            <key>Default</key>
-                <string>false</string>
-            <key>NotPersisted</key>
-                <true/>
-            <key>Units</key>
-                <dict>
-                    <key>true</key>
-                    <dict>
-                        <key>Targets</key>
-                            <array>
-                                <dict>
-                                    <key>BuildPhases</key>
-                                        <array>
-                                            <dict>
-                                                <key>Class</key>
-                                                <string>ShellScript</string>
-                                                <key>Name</key>
-                                                <string>Swift Lint</string>
-                                                <key>ShellPath</key>
-                                                <string>/bin/sh</string>
-                                                <key>ShellScript</key>
-                                                <string>if which swiftlint >/dev/null; then
-swiftlint
-else
-echo "error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint"
-exit 1
-fi</string>
-                                            </dict>
-                                        </array>
-                                </dict>
-                            </array>
-                            <key>Nodes</key>
-                                <array>
-                                    <string>../.swiftlint.yml</string>
-                                </array>
-                            <key>Definitions</key>
-                                <dict>
-                                    <key>../.swiftlint.yml</key>
-                                        <dict>
-                                            <key>Path</key>
-                                                <string>.swiftlint.yml</string>
-                                            <key>Group</key>
-                                                <string>Non-iOS Resources</string>
-                                        </dict>
-                                </dict>
-                    </dict>
-                </dict>
         </dict>
         <dict>
             <key>Identifier</key>
