@@ -21,3 +21,9 @@ build:
 
 synx:
 	bundle exec synx --exclusion "___PACKAGENAME___/Non-iOS Resources" ___PACKAGENAME___.xcodeproj
+
+lint:
+    ./Pods/SwiftLint/swiftlint lint --config .swiftlint.yml
+
+format:
+    ./Pods/SwiftLint/swiftlint autocorrect --config .swiftlint.yml
