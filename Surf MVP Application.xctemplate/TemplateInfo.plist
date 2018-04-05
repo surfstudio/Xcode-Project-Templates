@@ -21,41 +21,51 @@
         <string>../Gemfile</string>
         <string>../commit-msg</string>
         <string>../.swiftlint.yml</string>
+        <string>../Rambafile</string>
     </array>
     <key>Definitions</key>
     <dict>
         <key>../.swiftlint.yml</key>
-        <dict>
-            <key>Path</key>
-            <string>.swiftlint.yml</string>
-            <key>Group</key>
-            <string>Non-iOS Resources</string>
-        </dict>
+            <dict>
+                <key>Path</key>
+                <string>.swiftlint.yml</string>
+                <key>Group</key>
+                <string>Non-iOS Resources</string>
+            </dict>
         <key>../Podfile:swiftbasics</key>
-        <string>
-    pod &apos;Crashlytics&apos;
-    pod &apos;Fabric&apos;</string>
+                <string>
+            pod &apos;Crashlytics&apos;
+            pod &apos;Fabric&apos;</string>
     	<key>../Makefile</key>
-        <dict>
-            <key>Path</key>
-            <string>Makefile</string>
-            <key>Group</key>
-            <string>Non-iOS Resources</string>
-        </dict>
+            <dict>
+                <key>Path</key>
+                <string>Makefile</string>
+                <key>Group</key>
+                <string>Non-iOS Resources</string>
+            </dict>
         <key>../Gemfile</key>
-        <dict>
-            <key>Path</key>
-            <string>Gemfile</string>
-            <key>Group</key>
-            <string>Non-iOS Resources</string>
-        </dict>
+            <dict>
+                <key>Path</key>
+                <string>Gemfile</string>
+                <key>Group</key>
+                <string>Non-iOS Resources</string>
+            </dict>
         <key>../commit-msg</key>
-        <dict>
-            <key>Path</key>
-            <string>commit-msg</string>
-            <key>Group</key>
-            <string>Non-iOS Resources</string>
-        </dict>
+            <dict>
+                <key>Path</key>
+                <string>commit-msg</string>
+                <key>Group</key>
+                <string>Non-iOS Resources</string>
+            </dict>
+        <key>../Rambafile</key>
+            <dict>
+                <key>TargetIndices</key>
+                <array/>
+                <key>Path</key>
+                <string>Rambafile</string>
+                <key>Group</key>
+                <string>Non-iOS Resources</string>
+            </dict> 
     </dict>
     <key>Targets</key>
         <array>
@@ -178,40 +188,6 @@
                                     <string>    pod &apos;AlamofireImage&apos;, &apos;~> 3.2&apos;</string>
                                 <key>../Podfile:afntwrkactivityindicator</key>
                                     <string>    pod &apos;AlamofireNetworkActivityIndicator&apos;, &apos;~> 2.1&apos;</string>
-                            </dict>
-                    </dict>
-                </dict>
-        </dict>
-        <dict>
-            <key>Identifier</key>
-                <string>isCreateRambafile</string>
-            <key>Name</key>
-                <string>Create Rambafile</string>
-            <key>Type</key>
-                <string>checkbox</string>
-            <key>Default</key>
-                <string>false</string>
-            <key>NotPersisted</key>
-                <true/>
-            <key>Units</key>
-                <dict>
-                    <key>true</key>
-                    <dict>
-                        <key>Nodes</key>
-                            <array>
-                                <string>../Rambafile</string>
-                            </array>
-                        <key>Definitions</key>
-                            <dict>
-                                <key>../Rambafile</key>
-                                    <dict>
-                                        <key>TargetIndices</key>
-                                            <array/>
-                                        <key>Path</key>
-                                            <string>Rambafile</string>
-                                        <key>Group</key>
-                                            <string>Non-iOS Resources</string>
-                                    </dict> 
                             </dict>
                     </dict>
                 </dict>

@@ -7,6 +7,7 @@ init:
 	-bundle install --path .bundle
 	-bundle exec pod repo update
 	-bundle exec pod install
+	-bundle exec generamba template install
 
 	# Install git hooks
 	mkdir -p .git/hooks
@@ -20,10 +21,10 @@ build:
 	bundle exec fastlane build clean:true
 
 synx:
-	bundle exec synx --exclusion "___PACKAGENAME___/Non-iOS Resources" ___PACKAGENAME___.xcodeproj
+	bundle exec synx --exclusion "Project/Non-iOS Resources" Project.xcodeproj
 
 lint:
-    ./Pods/SwiftLint/swiftlint lint --config .swiftlint.yml
+	./Pods/SwiftLint/swiftlint lint --config .swiftlint.yml
 
 format:
-    ./Pods/SwiftLint/swiftlint autocorrect --config .swiftlint.yml
+	./Pods/SwiftLint/swiftlint autocorrect --config .swiftlint.yml
