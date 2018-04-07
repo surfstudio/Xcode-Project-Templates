@@ -12,12 +12,13 @@ Xcode 8 or later.
 * ### Surf MVP Application
   #### Features
   * Adds ModuleTransitionable.swift file to project
-  * Adds Podfile with Fabric and Crashlytics pods
+  * Adds Podfile with Fabric, Crashlytics, SwiftLint and SwiftGen pods
+  * Adds .swiftlint.yml file and SwiftLint Run Script to Build phases
+  * Adds Gemfile with fastlane, cocoapods, synx and generamba gems
+  * Rambafile - creates Rambafile with surf_mvp_module template and paths to project target and tests target
   #### Options
   * Storyboards - creates Main.storyboard file
-  * SwiftLint - adds .swiftlint.yml file and Run Script to Build phases that will show error if SwiftLint not installed
   * Alamofire - adds Alamofire, AlamofireImage and AlamofireNetworkActivityIndicator pods
-  * Rambafile - creates Rambafile with surf_mvp_module template and paths to project target and tests target
 
 ## Installation
 To install or update the templates you need:
