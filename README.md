@@ -22,8 +22,8 @@ Xcode 8 or later.
 
 ## Installation
 To install or update the templates you need:
-  * Quit Xcode
-  * On the command line:
+  1. Quit Xcode
+  2. On the command line:
   ```
   cd ~/Downloads
   git clone https://github.com/surfstudio/Xcode-Project-Templates
@@ -42,8 +42,9 @@ After that:
 
 ## After creating a project
 ### Fix folders links
-* Open up the Terminal and `cd` into your project folder
-* Call in Terminal `make init` and after that call `make synx`
+1. Open up the Terminal and `cd` into your project folder
+2. Call in Terminal `make init`
+3. Call `make synx`
 ### Remove unnecessary files
-* Open up the .xcodeproj file
-* Remove the Non-iOS Resources folder from the Xcode project by selecting that folder in the sidebar, right clicking, then selecting delete from the menu, then selecting "Remove References" in the dialog that pops up
+1. Open up the .xcodeproj file
+2. Remove the Non-iOS Resources folder from the Xcode project by selecting that folder in the sidebar, right clicking, then selecting delete from the menu, then selecting "Remove References" in the dialog that pops up

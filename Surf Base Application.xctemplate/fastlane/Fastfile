@@ -1,0 +1,183 @@
+# Customise this file, documentation can be found here:
+# https://docs.fastlane.tools/actions/
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.58.0"
+
+default_platform :ios
+
+platform :ios do
+
+  workspace_file = '___PACKAGENAME___.xcworkspace'
+  project_file = '___PACKAGENAME___.xcodeproj'
+  main_scheme = '___PACKAGENAME___'
+  bundle_name = "___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___.___VARIABLE_productName:RFC1034Identifier___"
+
+  before_all do |lane, options|  
+    # ensure_git_status_clean 
+  end
+
+  lane :build do |options|
+    sigh(
+      development: true,
+      app_identifier: bundle_name
+    )
+    
+    xcodebuild(
+      workspace: workspace_file,
+      scheme: main_scheme,
+      configuration: "Debug",
+      clean: options[:clean],
+      build: true,
+      destination: "generic/platform=iOS\" CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=\""
+    )
+  end
+
+  lane :prepare_for_integration do |options|
+
+    version_number = options[:version_number]
+    if version_number.nil?
+      throw "Required version_number parameter"
+    end
+
+    build_number = options[:type_v]
+    if not build_number.nil?
+      increment_build_number(build_number: build_number)
+    else
+      increment_build_number()
+    end
+
+    increment_version_number(version_number: options[:version_number])
+    
+    commit_version_bump(
+      xcodeproj: project_file,
+      force: true
+    )
+
+    tag_label = get_version_number
+
+    type = options[:type]
+    typeIndex = options[:type_v]
+    if not type.nil?
+      tag_label = "dev_" + tag_label + "-" + type + "" + typeIndex
+    end
+
+    add_git_tag(
+      tag: tag_label
+    )
+
+    # sh("git push && git push origin --tags")
+  end
+
+  desc "Set build number and push version bump commit to develop branch with tag"
+  lane :prepare_for_beta do |options|
+
+    current_version = get_version_number
+    type = options[:type]
+    tag_prefix = 'dev_' + current_version + "-" + type
+
+    last_tag = git_tags
+      .select{ |tag| tag.index(tag_prefix) == 0}
+      .first
+
+    if last_tag.nil? 
+      last_tag_index = 0
+    else
+      last_tag_index = (last_tag.sub! tag_prefix, "").to_i
+    end
+
+    result_tag_index = last_tag_index + 1
+    build_number = tag_prefix + result_tag_index.to_s
+
+    prepare_for_integration(
+      version_number: current_version,
+      type: options[:type],
+      type_v: result_tag_index.to_s,
+      build_number: build_number
+    )
+  end
+
+  desc "Set version and build numbers and push version bump commit to master branch with tag"
+  lane :prepare_for_release do |options|
+    release_build_number = app_store_build_number.to_i + 1
+    prepare_for_integration(version_number: options[:version_number], build_number: release_build_number)
+  end
+
+  desc "Submit a new Beta Build to Fabric"
+  lane :beta do
+
+    cocoapods(use_bundle_exec:true)
+
+    sigh(
+      development: true,
+      app_identifier: bundle_name
+    )
+
+    gym(
+      scheme: main_scheme,
+      configuration: "Debug",
+      clean: true,
+      include_bitcode: false,
+      export_options: { compileBitcode: false},
+      export_method: "development"
+    )
+
+    upload_to_fabric
+
+    sh("rm ../*.mobileprovision")
+  end
+
+  # Need check
+  desc "Submit a new Release Build to Fabric"
+  lane :release do
+    #cocoapods(use_bundle_exec: false)
+
+    cert(development: false)
+
+    sigh(
+      development: true,
+      app_identifier: bundle_name
+    )
+
+    gym(
+      scheme: main_scheme,
+      configuration: "Release",
+      clean: true,
+      include_bitcode: false,
+      export_options: { compileBitcode: false},
+      export_method: "app-store"
+    )
+
+    upload_to_fabric
+
+    sh("rm ../*.mobileprovision")
+  end
+
+  lane :upload_to_fabric do
+
+    # Load in Fabric
+    crashlytics(
+      api_token: "PUT TOKEN HERE",
+      build_secret: "PUT BUILD SECRET HERE",
+      emails: ["PUT_EMAILS_HERE"],
+      notes: ENV[main_scheme + "_iOS_Crashlytics_Changelog"]
+    )
+  end
+
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used. No personal data is recorded. 
+# Learn more at https://github.com/fastlane/fastlane#metrics

@@ -21,7 +21,7 @@ build:
 	bundle exec fastlane build clean:true
 
 synx:
-	bundle exec synx --exclusion "Project/Non-iOS Resources" Project.xcodeproj
+	bundle exec synx --exclusion "___PACKAGENAME___/Non-iOS Resources" ___PACKAGENAME___.xcodeproj
 
 lint:
 	./Pods/SwiftLint/swiftlint lint --config .swiftlint.yml

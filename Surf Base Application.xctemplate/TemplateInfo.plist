@@ -277,6 +277,7 @@
 	</array>
 	<key>Nodes</key>
 	<array>
+		<string>../fastlane</string>
 		<string>../Podfile</string>
 		<string>../.gitignore</string>
 		<string>Third Party/.gitkeep</string>
@@ -300,6 +301,15 @@
 	</array>
 	<key>Definitions</key>
 	<dict>
+		<key>../fastlane</key>
+		<dict>
+			<key>Path</key>
+			<string>fastlane</string>
+			<key>Group</key>
+			<array>
+				<string>Non-iOS Resources</string>
+			</array>
+		</dict>
 		<key>../Podfile</key>
 		<dict>
 			<key>TargetIndices</key>
