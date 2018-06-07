@@ -20,7 +20,7 @@ platform :ios do
   workspace_file = '___PACKAGENAME___.xcworkspace'
   project_file = '___PACKAGENAME___.xcodeproj'
   main_scheme = '___PACKAGENAME___'
-  bundle_name = "___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___"
+  bundle_name = "___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___.___VARIABLE_productName:RFC1034Identifier___"
 
   before_all do |lane, options|  
     # ensure_git_status_clean 
