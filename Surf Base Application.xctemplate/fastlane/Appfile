@@ -1,0 +1,7 @@
+# app_identifier "[[APP_IDENTIFIER]]" # The bundle identifier of your app
+apple_id "PUT HERE EMAIL" # Your Apple email address
+
+team_id "PUT HERE TEAM ID"  # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
