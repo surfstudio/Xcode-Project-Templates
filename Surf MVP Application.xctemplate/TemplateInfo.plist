@@ -22,6 +22,7 @@
         <string>../commit-msg</string>
         <string>../.swiftlint.yml</string>
         <string>../Rambafile</string>
+        <string>../README.md</string>
     </array>
     <key>Definitions</key>
     <dict>
@@ -63,6 +64,15 @@
                 <array/>
                 <key>Path</key>
                 <string>Rambafile</string>
+                <key>Group</key>
+                <string>Non-iOS Resources</string>
+            </dict> 
+        <key>../README.md</key>
+            <dict>
+                <key>TargetIndices</key>
+                <array/>
+                <key>Path</key>
+                <string>README.md</string>
                 <key>Group</key>
                 <string>Non-iOS Resources</string>
             </dict> 
