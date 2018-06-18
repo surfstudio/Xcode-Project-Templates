@@ -15,7 +15,9 @@ Xcode 8 or later.
   * Adds Podfile with Fabric, Crashlytics, SwiftLint and SwiftGen pods
   * Adds .swiftlint.yml file and SwiftLint Run Script to Build phases
   * Adds Gemfile with fastlane, cocoapods, synx and generamba gems
-  * Rambafile - creates Rambafile with surf_mvp_module template and paths to project target and tests target
+  * Creates Fastlane files with template methods
+  * Creates Rambafile with surf_mvp_module template and paths to project target and tests target
+  * Creates Makefile with helper methods
   #### Options
   * Storyboards - creates Main.storyboard file
   * Alamofire - adds Alamofire, AlamofireImage and AlamofireNetworkActivityIndicator pods
@@ -48,3 +50,7 @@ After that:
 ### Remove unnecessary files
 1. Open up the .xcodeproj file
 2. Remove the Non-iOS Resources folder from the Xcode project by selecting that folder in the sidebar, right clicking, then selecting delete from the menu, then selecting "Remove References" in the dialog that pops up
+### Insert keys in Fastlane files
+1. Open fastlane folder
+2. Insert `team_id` in AppFile
+3. Insert `api_token`, `build secret` and `emails` in `upload_to_fabric` lane
