@@ -90,7 +90,7 @@
                             <key>ShellPath</key>
                             <string>/bin/sh</string>
                             <key>ShellScript</key>
-                            <string>$PODS_ROOT/SwiftGen/bin/swiftgen</string>
+                            <string>${PODS_ROOT}/SwiftLint/swiftlint</string>
                         </dict>
                     </array>
             </dict>
