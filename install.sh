@@ -9,8 +9,6 @@ cp -R "Surf Base Application.xctemplate" "${installDirectory}"
 cp -R "Surf MVP Application.xctemplate" "${installDirectory}"
 cp -R "Surf Application Unit Test Base.xctemplate" "${installDirectory}"
 
-echo "Templates will be installed to ${installDirectory}"
-
 mkdir -p "${baseAppDirectory}/Application"
 mkdir -p "${baseAppDirectory}/Library/Base Classes"
 mkdir -p "${baseAppDirectory}/Library/Extensions"
@@ -33,3 +31,5 @@ mkdir -p "${testsDirectory}/Tests/Extensions"
 mkdir -p "${testsDirectory}/Tests/Models"
 mkdir -p "${testsDirectory}/Tests/Screens"
 mkdir -p "${testsDirectory}/Tests/Services"
+
+echo "Templates installed to ${installDirectory}"

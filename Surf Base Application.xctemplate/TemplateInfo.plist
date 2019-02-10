@@ -320,8 +320,8 @@
 inhibit_all_warnings!
 
 def utils
-    pod 'SwiftGen', '~> 5.2.1'
-    pod 'SwiftLint', '~> 0.25.0'
+    pod 'SwiftGen', '~> 6.1.0'
+    pod 'SwiftLint', '~> 0.30.1'
 end
 
 target &apos;___PACKAGENAME___&apos; do
