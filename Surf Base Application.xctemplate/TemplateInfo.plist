@@ -282,7 +282,7 @@
 		<string>../.gitignore</string>
 		<string>Third Party/.gitkeep</string>
 		<string>Services/.gitkeep</string>
-		<string>Screens/.gitkeep</string>
+		<string>User Stories/.gitkeep</string>
 		<string>Resources/Strings/.gitkeep</string>
 		<string>Resources/Images/.gitkeep</string>
 		<string>Resources/Constants/.gitkeep</string>
@@ -484,10 +484,10 @@ end
 			<key>TargetIndices</key>
 			<array/>
 		</dict>
-		<key>Screens/.gitkeep</key>
+		<key>User Stories/.gitkeep</key>
 		<dict>
 			<key>Group</key>
-			<string>Screens</string>
+			<string>User Stories</string>
 			<key>Path</key>
 			<string>../.gitkeep</string>
 			<key>TargetIndices</key>

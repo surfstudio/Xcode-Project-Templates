@@ -16,7 +16,6 @@
     <string></string>
     <key>Nodes</key>
     <array>
-        <string>../Podfile:swiftbasics</string>
         <string>../Makefile</string>
         <string>../Gemfile</string>
         <string>../commit-msg</string>
@@ -33,10 +32,6 @@
                 <key>Group</key>
                 <string>Non-iOS Resources</string>
             </dict>
-        <key>../Podfile:swiftbasics</key>
-                <string>
-            pod &apos;Crashlytics&apos;
-            pod &apos;Fabric&apos;</string>
     	<key>../Makefile</key>
             <dict>
                 <key>Path</key>
@@ -90,118 +85,14 @@
                             <key>ShellPath</key>
                             <string>/bin/sh</string>
                             <key>ShellScript</key>
-                            <string>${PODS_ROOT}/SwiftLint/swiftlint</string>
+                            <string>if which "${SRCROOT}/Pods/SwiftLint/swiftlint" >/dev/null; then
+    ${SRCROOT}/Pods/SwiftLint/swiftlint --config "${SRCROOT}/.swiftlint.yml"
+else
+    echo "error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint"
+exit 1</string>
                         </dict>
                     </array>
             </dict>
         </array>
-    <key>Options</key>
-    <array>
-        <dict>
-            <key>Identifier</key>
-            <string>languageChoice</string>
-            <key>Units</key>
-            <dict>
-                <key>Objective-C</key>
-                <dict>
-                <key>Nodes</key>
-                    <array>
-                    </array>
-                    <key>Definitions</key>
-                    <dict>
-                    </dict>    
-                </dict>
-                <key>Swift</key>
-                <dict>
-                    <key>Nodes</key>
-                    <array>
-                        <string>Library/Protocols/ModuleTransitionable.swift</string>
-                    </array>
-                    <key>Definitions</key>
-                    <dict>
-                        <key>Library/Protocols/ModuleTransitionable.swift</key>
-                        <dict>
-                            <key>Group</key>
-                            <array>
-                                <string>Library</string>
-                                <string>Protocols</string>
-                            </array>
-                            <key>Path</key>
-                                <string>ModuleTransitionable.swift</string>
-                        </dict>
-                    </dict>
-                </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Identifier</key>
-            <string>isUseStoryboards</string>
-            <key>Name</key>
-            <string>Use Storyboards</string>
-            <key>Type</key>
-            <string>checkbox</string>
-            <key>Default</key>
-            <string>false</string>
-            <key>NotPersisted</key>
-            <true/>
-            <key>Units</key>
-            <dict>
-                <key>true</key>
-                <dict>
-                    <key>Nodes</key>
-                        <array>
-                            <string>Main.storyboard</string>
-                            <string>Info.plist:UIMainStoryboardFile</string>
-                        </array>
-                    <key>Definitions</key>
-                    <dict>
-                        <key>Info.plist:UIMainStoryboardFile</key>
-                        <string>&lt;key&gt;UIMainStoryboardFile&lt;/key&gt;
-&lt;string&gt;Main&lt;/string&gt;</string>
-                        <key>Main.storyboard</key>
-                        <dict>
-                            <key>Path</key>
-                                <string>Main.storyboard</string>
-                            <key>SortOrder</key>
-                                <integer>99</integer>
-                        </dict>
-                    </dict>
-                </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Identifier</key>
-                <string>isUseAlamofire</string>
-            <key>Name</key>
-                <string>Use Alamofire+AlamofireImage+AlamofireNetworkActivityIndicator</string>
-            <key>Type</key>
-                <string>checkbox</string>
-            <key>Default</key>
-                <string>false</string>
-            <key>NotPersisted</key>
-                <true/>
-            <key>Units</key>
-                <dict>
-                    <key>true</key>
-                    <dict>
-                        <key>Nodes</key>
-                            <array>
-                                <string>../Podfile:afpod</string>
-                                <string>../Podfile:afimage</string>
-                                <string>../Podfile:afntwrkactivityindicator</string>
-                            </array>
-                        <key>Definitions</key>
-                            <dict>
-                                <key>../Podfile:afpod</key>
-                                    <string>    pod &apos;Alamofire&apos;, &apos;~> 4.0&apos;</string>
-                                <key>../Podfile:afimage</key>
-                                    <string>    pod &apos;AlamofireImage&apos;, &apos;~> 3.2&apos;</string>
-                                <key>../Podfile:afntwrkactivityindicator</key>
-                                    <string>    pod &apos;AlamofireNetworkActivityIndicator&apos;, &apos;~> 2.1&apos;</string>
-                            </dict>
-                    </dict>
-                </dict>
-        </dict>
-    </array>
 </dict>
 </plist>
