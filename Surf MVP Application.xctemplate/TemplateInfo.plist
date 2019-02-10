@@ -16,15 +16,75 @@
     <string></string>
     <key>Nodes</key>
     <array>
+		<string>Resources/Constants/Assets.swift</string>
+        <string>Resources/Constants/Color.swift</string>
+		<string>Resources/Constants/Fonts.swift</string>
+		<string>Resources/Constants/Strings.swift</string>
+        <string>../swifgen.yml</string>
+        <string>../.swiftlint.yml</string>
         <string>../Makefile</string>
         <string>../Gemfile</string>
         <string>../commit-msg</string>
-        <string>../.swiftlint.yml</string>
         <string>../Rambafile</string>
         <string>../README.md</string>
     </array>
     <key>Definitions</key>
     <dict>
+        <key>Resources/Constants/Assets.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Resources</string>
+                    <string>Constants</string>
+                </array>
+                <key>Path</key>
+                <string>Assets.swift</string>
+                <key>TargetIndices</key>
+                <array/>
+            </dict>
+        <key>Resources/Constants/Color.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Resources</string>
+                    <string>Constants</string>
+                </array>
+                <key>Path</key>
+                <string>Color.swift</string>
+                <key>TargetIndices</key>
+                <array/>
+            </dict>
+        <key>Resources/Constants/Fonts.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Resources</string>
+                    <string>Constants</string>
+                </array>
+                <key>Path</key>
+                <string>Fonts.swift</string>
+                <key>TargetIndices</key>
+                <array/>
+            </dict>
+        <key>Resources/Constants/Strings.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Resources</string>
+                    <string>Constants</string>
+                </array>
+                <key>Path</key>
+                <string>Strings.swift</string>
+                <key>TargetIndices</key>
+                <array/>
+            </dict>
+        <key>../swifgen.yml</key>
+            <dict>
+                <key>Path</key>
+                <string>swifgen.yml</string>
+                <key>Group</key>
+                <string>Non-iOS Resources</string>
+            </dict>
         <key>../.swiftlint.yml</key>
             <dict>
                 <key>Path</key>
@@ -90,6 +150,16 @@
 else
     echo "error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint"
 exit 1</string>
+                        </dict>
+                        <dict>
+                            <key>Class</key>
+                            <string>ShellScript</string>
+                            <key>Name</key>
+                            <string>Swift Gen</string>
+                            <key>ShellPath</key>
+                            <string>/bin/sh</string>
+                            <key>ShellScript</key>
+                            <string>${SRCROOT}/Pods/SwiftGen/bin/swiftgen</string>
                         </dict>
                     </array>
             </dict>

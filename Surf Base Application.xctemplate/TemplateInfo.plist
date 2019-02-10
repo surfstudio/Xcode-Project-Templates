@@ -312,34 +312,8 @@
 		</dict>
 		<key>../Podfile</key>
 		<dict>
-			<key>TargetIndices</key>
-			<array/>
-			<key>Beginning</key>
-			<string>platform :ios, &apos;10.0&apos;
-
-inhibit_all_warnings!
-
-def utils
-    pod 'SwiftGen', '~> 6.1.0'
-    pod 'SwiftLint', '~> 0.30.1'
-end
-
-target &apos;___PACKAGENAME___&apos; do
-
-    use_frameworks!
-
-    utils
-                </string>
-			<key>End</key>
-			<string>
-
-    target &apos;___PACKAGENAME___Tests&apos; do
-        # Put pods used for both test targets here
-    end
-
-end
-
-                </string>
+			<key>Path</key>
+			<string>Podfile</string>
 			<key>Group</key>
 			<array>
 				<string>Non-iOS Resources</string>
