@@ -12,16 +12,7 @@ def common_pods
     # Put your pods here
 end
 
-target 'Unicredit' do
-
+target '___PACKAGENAME___' do
     use_frameworks!
-
-    common_pods
-end
-
-
-target 'UnicreditDebug' do
-    use_frameworks!
-
     common_pods
 end
