@@ -124,6 +124,13 @@ custom_rules:
         regex: "@IBAction func"
         message: "IBAction should be private or fileprivate"
         severity: error
+        
+     mark_newlines:
+        included: ".*.swift"
+        name: "MARK newlines surrounding"
+        regex: '(([}{)\w \t]+\n{1}[ \t]*)(\/\/ MARK: - [\w ]*))|((\/\/ MARK: - [\w ]*)(\n{1}[ \t]*\w+))'
+        message: "Every MARK should be surrounded with 1 newline before and 1 after it"
+        severity: warning
 
 line_length: 120
 
