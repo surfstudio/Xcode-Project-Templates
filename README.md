@@ -11,16 +11,13 @@ Xcode 8 or later.
 ## List of templates
 * ### Surf MVP Application
   #### Features
-  * Adds ModuleTransitionable.swift file to project
-  * Adds Podfile with Fabric, Crashlytics, SwiftLint and SwiftGen pods
+  * Adds Podfile with SwiftLint and SwiftGen pods
   * Adds .swiftlint.yml file and SwiftLint Run Script to Build phases
+  * Adds .swiftgen.yml file and SwiftGen Run Script to Build phases
   * Adds Gemfile with fastlane, cocoapods, synx and generamba gems
   * Creates Fastlane files with template methods
   * Creates Rambafile with surf_mvp_module template and paths to project target and tests target
   * Creates Makefile with helper methods
-  #### Options
-  * Storyboards - creates Main.storyboard file
-  * Alamofire - adds Alamofire, AlamofireImage and AlamofireNetworkActivityIndicator pods
 
 ## Installation
 To install or update the templates you need:
@@ -49,7 +46,7 @@ After that:
 3. Call `make synx`
 ### Remove unnecessary files
 1. Open up the .xcodeproj file
-2. Remove the Non-iOS Resources folder from the Xcode project by selecting that folder in the sidebar, right clicking, then selecting delete from the menu, then selecting "Remove References" in the dialog that pops up
+2. Open Build Phases of your target, remove unecessary files from Compile Sources and Copy Bundle Resources
 ### Insert keys in Fastlane files
 1. Open fastlane folder
 2. Insert `team_id` in AppFile

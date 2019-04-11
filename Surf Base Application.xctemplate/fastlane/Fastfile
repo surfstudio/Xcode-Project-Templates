@@ -9,10 +9,6 @@
 # If you want to automatically update fastlane if a new version is available:
 # update_fastlane
 
-# This is the minimum version number required.
-# Update this, if you use features of a newer version
-fastlane_version "2.58.0"
-
 default_platform :ios
 
 platform :ios do
@@ -26,6 +22,10 @@ platform :ios do
     # ensure_git_status_clean 
   end
 
+  desc "Build Main scheme of Xcode target in Debug configuration"
+  desc "Parameters:
+  - clean: Pass **true** if you need to clean project before build
+  "
   lane :build do |options|
     sigh(
       development: true,
@@ -42,8 +42,14 @@ platform :ios do
     )
   end
 
+  desc "Update build number, set tag and push version bump commit to the develop branch if needed"
+  desc "Parameters:
+  - version_number: Number of version that will be set
+  - type: Type of the build which will be set with the tag. For Example: for release candidate builds with tag `1.0.0-rc10` you need to pass `rc`.
+  - type_v: Version of current build type (type parameter).
+  - skip_push: Pass **true** if you need to skip push commits to the repository. The default is **false**
+  "
   lane :prepare_for_integration do |options|
-
     version_number = options[:version_number]
     if version_number.nil?
       throw "Required version_number parameter"
@@ -51,9 +57,9 @@ platform :ios do
 
     build_number = options[:type_v]
     if not build_number.nil?
-      increment_build_number(build_number: build_number)
+      increment_build_number_in_plist(build_number: build_number)
     else
-      increment_build_number()
+      increment_build_number_in_plist()
     end
 
     increment_version_number(version_number: options[:version_number])
@@ -63,7 +69,7 @@ platform :ios do
       force: true
     )
 
-    tag_label = get_version_number
+    tag_label = get_version_number_from_plist()
 
     type = options[:type]
     typeIndex = options[:type_v]
@@ -75,45 +81,87 @@ platform :ios do
       tag: tag_label
     )
 
-    # sh("git push && git push origin --tags")
+    skip_push_opt = options[:skip_push]
+    needs_to_push = skip_push_opt.to_s.empty? || skip_push_opt.to_s == "false"
+
+    if needs_to_push
+      sh("git push", error_callback: ->(result) { 
+        UI.error "git push failed with result: #{result}"
+      })
+      sh("git push origin --tags")
+    end
   end
 
-  desc "Set build number and push version bump commit to develop branch with tag"
+  desc "Update build number, set tag and push version bump commit to the develop branch if needed"
+  desc "Parameters:
+  - type: Type of the build which will be set with the tag. For Example: for release candidate builds with tag `1.0.0-rc10` you need to pass `rc`.
+  - skip_push: Pass **true** if you need to skip push commits to the repository. The default is **false**
+  "
   lane :prepare_for_beta do |options|
-
-    current_version = get_version_number
+    current_version = get_version_number_from_plist
     type = options[:type]
-    tag_prefix = 'dev_' + current_version + "-" + type
+    tag_prefix = current_version + "-" + type
 
-    last_tag = git_tags
-      .select{ |tag| tag.index(tag_prefix) == 0}
-      .first
-
-    if last_tag.nil? 
-      last_tag_index = 0
-    else
-      last_tag_index = (last_tag.sub! tag_prefix, "").to_i
-    end
-
-    result_tag_index = last_tag_index + 1
+    last_tag_index = get_build_number_from_plist()
+    result_tag_index = last_tag_index.to_i + 1
     build_number = tag_prefix + result_tag_index.to_s
 
     prepare_for_integration(
       version_number: current_version,
       type: options[:type],
       type_v: result_tag_index.to_s,
-      build_number: build_number
+      build_number: build_number,
+      skip_push: options[:skip_push]
     )
   end
 
-  desc "Set version and build numbers and push version bump commit to master branch with tag"
+  desc "Set `rc` tag and push to the current branch"
+  desc "Parameters:
+  - include_beta: Pass **true** to call `prepare_for_beta` lane for debug and prod types
+  - skip_push: Pass **true** if you need to skip push commits to the repository. The default is **false**
+  "
   lane :prepare_for_release do |options|
-    release_build_number = app_store_build_number.to_i + 1
-    prepare_for_integration(version_number: options[:version_number], build_number: release_build_number)
+    include_beta = options[:include_beta]
+    if include_beta.nil? || include_beta.to_s == ""
+      throw "Required include_beta parameter"
+    end
+
+    if include_beta.to_s == "true"
+      prepare_for_beta type:"debug"
+    end
+
+    tag_label = get_version_number_from_plist(target: prod_target)
+
+    type = "rc"
+    last_tag_index = get_build_number_from_plist(target: prod_target)
+
+    if not type.nil?
+      tag_label = tag_label + "-" + type + "" + last_tag_index
+    end
+
+    add_git_tag(
+      tag: tag_label
+    )
+
+    skip_push_opt = options[:skip_push]
+    needs_to_push = skip_push_opt.to_s.empty? || skip_push_opt.to_s == "false"
+
+    if needs_to_push
+      sh("git push", error_callback: ->(result) { 
+        UI.error "git push failed with result: #{result}"
+      })
+      sh("git push origin --tags")
+    end
   end
 
-  desc "Submit a new Beta Build to Fabric"
-  lane :beta do
+  desc "Upload a new Beta Build to Fabric"
+  desc "Parameters:
+  - destination: Type of the build which will be submitted
+  "
+  lane :beta do |options|
+    type = options[:destination]
+    bundle_id = bundle_name
+    scheme = main_scheme
 
     cocoapods(use_bundle_exec:true)
 
@@ -123,12 +171,14 @@ platform :ios do
     )
 
     gym(
-      scheme: main_scheme,
+      scheme: scheme,
       configuration: "Debug",
       clean: true,
       include_bitcode: false,
-      export_options: { compileBitcode: false},
-      export_method: "development"
+      export_options: { 
+        compileBitcode: false,
+      },
+      export_method: "development",
     )
 
     upload_to_fabric
@@ -136,10 +186,9 @@ platform :ios do
     sh("rm ../*.mobileprovision")
   end
 
-  # Need check
-  desc "Submit a new Release Build to Fabric"
+  desc "Upload a new Release Build to iTunesConnect"
   lane :release do
-    #cocoapods(use_bundle_exec: false)
+    cocoapods(use_bundle_exec: true)
 
     cert(development: false)
 
@@ -149,28 +198,42 @@ platform :ios do
     )
 
     gym(
-      scheme: main_scheme,
+      scheme: prod_scheme,
       configuration: "Release",
       clean: true,
       include_bitcode: false,
-      export_options: { compileBitcode: false},
+      export_options: { 
+        compileBitcode: false
+      },
       export_method: "app-store"
     )
 
-    upload_to_fabric
+    upload_to_app_store(
+      app_identifier: bundle_name
+    )
 
-    sh("rm ../*.mobileprovision")
+    refresh_dsyms()
   end
 
+  desc "Upload a new build to the Fabric"
   lane :upload_to_fabric do
-
-    # Load in Fabric
+    # Upload to Fabric
     crashlytics(
       api_token: "PUT TOKEN HERE",
       build_secret: "PUT BUILD SECRET HERE",
       emails: ["PUT_EMAILS_HERE"],
       notes: ENV[main_scheme + "_iOS_Crashlytics_Changelog"]
     )
+  end
+
+
+  desc "Send dSYMS to Fabric"
+  lane :refresh_dsyms do |options|
+    bundle_id = bundle_name
+
+    download_dsyms(app_identifier: bundle_id, version: 'latest') # Download dSYM files from iTC
+    upload_symbols_to_crashlytics # Upload them to Crashlytics
+    clean_build_artifacts # Delete the local dSYM files
   end
 
 end

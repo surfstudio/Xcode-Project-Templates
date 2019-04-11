@@ -1,0 +1,19 @@
+xcassets:
+  inputs:
+    - ___PACKAGENAME___/Resources/Images/Assets.xcassets
+  outputs:
+    - templateName: swift4
+      output: ___PACKAGENAME___/Resources/Constants/Assets.swift
+
+fonts:
+  inputs:
+    - ___PACKAGENAME___/Resources/Fonts/
+  outputs:
+    - templateName: swift4
+      output: ___PACKAGENAME___/Resources/Constants/Fonts.swift
+
+strings:
+  inputs: ___PACKAGENAME___/Resources/Strings/Localizable.strings
+  outputs:
+    - templateName: structured-swift4
+      output: ___PACKAGENAME___/Resources/Constants/Strings.swift

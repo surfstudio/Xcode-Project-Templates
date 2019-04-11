@@ -1,1 +1,18 @@
+platform :ios, '10.0'
 
+inhibit_all_warnings!
+
+def utils
+    pod 'SwiftGen', '~> 6.1.0'
+    pod 'SwiftLint', '~> 0.30.1'
+end
+
+def common_pods
+    utils
+    # Put your pods here
+end
+
+target '___PACKAGENAME___' do
+    use_frameworks!
+    common_pods
+end

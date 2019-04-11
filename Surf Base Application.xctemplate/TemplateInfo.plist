@@ -282,7 +282,7 @@
 		<string>../.gitignore</string>
 		<string>Third Party/.gitkeep</string>
 		<string>Services/.gitkeep</string>
-		<string>Screens/.gitkeep</string>
+		<string>User Stories/.gitkeep</string>
 		<string>Resources/Strings/.gitkeep</string>
 		<string>Resources/Images/.gitkeep</string>
 		<string>Resources/Constants/.gitkeep</string>
@@ -312,34 +312,8 @@
 		</dict>
 		<key>../Podfile</key>
 		<dict>
-			<key>TargetIndices</key>
-			<array/>
-			<key>Beginning</key>
-			<string>platform :ios, &apos;10.0&apos;
-
-inhibit_all_warnings!
-
-def utils
-    pod 'SwiftGen', '~> 5.2.1'
-    pod 'SwiftLint', '~> 0.25.0'
-end
-
-target &apos;___PACKAGENAME___&apos; do
-
-    use_frameworks!
-
-    utils
-                </string>
-			<key>End</key>
-			<string>
-
-    target &apos;___PACKAGENAME___Tests&apos; do
-        # Put pods used for both test targets here
-    end
-
-end
-
-                </string>
+			<key>Path</key>
+			<string>Podfile</string>
 			<key>Group</key>
 			<array>
 				<string>Non-iOS Resources</string>
@@ -484,10 +458,10 @@ end
 			<key>TargetIndices</key>
 			<array/>
 		</dict>
-		<key>Screens/.gitkeep</key>
+		<key>User Stories/.gitkeep</key>
 		<dict>
 			<key>Group</key>
-			<string>Screens</string>
+			<string>User Stories</string>
 			<key>Path</key>
 			<string>../.gitkeep</string>
 			<key>TargetIndices</key>
