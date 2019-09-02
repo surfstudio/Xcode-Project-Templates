@@ -34,6 +34,7 @@
         <string>Library/Protocols/Presentable.swift</string>
         <string>Library/Protocols/Router.swift</string>
         <string>Library/Routers/MainRouter.swift</string>
+        <string>Application/DeepLinkOption.swift</string>
     </array>
     <key>Definitions</key>
     <dict>
@@ -208,6 +209,15 @@
                 </array>
                 <key>Path</key>
                 <string>CoordinatorsSupport/MainRouter.swift</string>
+            </dict>
+        <key>Application/DeepLinkOption.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Application</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/DeepLinkOption.swift</string>
             </dict>
     </dict>
     <key>Targets</key>

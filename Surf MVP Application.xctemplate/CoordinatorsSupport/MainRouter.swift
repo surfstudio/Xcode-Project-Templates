@@ -47,12 +47,6 @@ class MainRouter: Router {
         }
     }
 
-    func push(_ module: Presentable?, animated: Bool, completion: @escaping () -> Void) {
-        if let controller = module?.toPresent() {
-            self.topViewController?.navigationController?.pushViewController(controller, animated: animated, completion: completion)
-        }
-    }
-
     func popModule() {
         self.popModule(animated: true)
     }

@@ -9,7 +9,6 @@ protocol Router {
 
     func push(_ module: Presentable?)
     func push(_ module: Presentable?, animated: Bool)
-    func push(_ module: Presentable?, animated: Bool, completion: @escaping () -> Void)
 
     func popModule()
     func popModule(animated: Bool)

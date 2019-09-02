@@ -3,17 +3,18 @@ xcassets:
     - ___PACKAGENAME___/Resources/Images/Assets.xcassets
   outputs:
     - templateName: swift4
-      output: ___PACKAGENAME___/Resources/Constants/Assets.swift
+      output: ___PACKAGENAME___/Resources/Images/Assets.swift
 
 fonts:
   inputs:
     - ___PACKAGENAME___/Resources/Fonts/
   outputs:
     - templateName: swift4
-      output: ___PACKAGENAME___/Resources/Constants/Fonts.swift
+      output: ___PACKAGENAME___/Resources/Fonts/Fonts.swift
 
 strings:
-  inputs: ___PACKAGENAME___/Resources/Strings/Localizable.strings
+  inputs:
+    - ___PACKAGENAME___/Resources/Strings/Localizable.strings
   outputs:
     - templateName: structured-swift4
-      output: ___PACKAGENAME___/Resources/Constants/Strings.swift
+      output: ___PACKAGENAME___/Resources/Strings/Strings.swift
