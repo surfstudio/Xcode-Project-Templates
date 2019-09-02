@@ -16,7 +16,6 @@ platform :ios do
   workspace_file = '___PACKAGENAME___.xcworkspace'
   project_file = '___PACKAGENAME___.xcodeproj'
   prod_scheme = '___PACKAGENAME___'
-  debug_scheme = '___PACKAGENAME___ Debug'
   bundle_name = "___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___.___VARIABLE_productName:RFC1034Identifier___"
   derived_data_path = "./buildData"
 
@@ -38,15 +37,6 @@ platform :ios do
       destination: "generic/platform=iOS\" CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=\"",
       xcargs: "-sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build-for-testing",
       derivedDataPath: derived_data_path
-    )
-
-    xcodebuild(
-      workspace: workspace_file,
-      scheme: debug_scheme,
-      configuration: "Debug",
-      clean: options[:clean],
-      build: true,
-      destination: "generic/platform=iOS\" CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=\"",
     )
   end
 
@@ -80,14 +70,11 @@ platform :ios do
     build_number = options[:type_v]
     if not build_number.nil?
       increment_build_number_in_plist(build_number: build_number, target: prod_scheme)
-      increment_build_number_in_plist(build_number: build_number, target: debug_scheme)
     else
       increment_build_number_in_plist(target: prod_scheme)
-      increment_build_number_in_plist(target: debug_scheme)
     end
 
     increment_version_number_in_plist(version_number: options[:version_number], target: prod_scheme)
-    increment_version_number_in_plist(version_number: options[:version_number], target: debug_scheme)
     
     commit_version_bump(
       xcodeproj: project_file,
