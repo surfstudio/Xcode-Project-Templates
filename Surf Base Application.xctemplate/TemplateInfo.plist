@@ -296,7 +296,6 @@
 		<string>Library/Reusable Layer/.gitkeep</string>
 		<string>Library/Protocols/.gitkeep</string>
 		<string>Application/LaunchScreen.xib</string>
-		<string>___PACKAGENAME___Tests/XCTestCase.swift</string>
 		<string>Info.plist:iPhone</string>
 		<string>Info.plist:UIRequiredDeviceCapabilities:base</string>
 		<string>Info.plist:LaunchScreen</string>
@@ -502,13 +501,6 @@
 			<string>Application</string>
 			<key>Path</key>
 			<string>LaunchScreen.xib</string>
-		</dict>
-		<key>___PACKAGENAME___Tests/XCTestCase.swift</key>
-		<dict>
-			<key>Group</key>
-			<string>___PACKAGENAME___Tests</string>
-			<key>Path</key>
-			<string>XCTestCase.swift</string>
 		</dict>
 		<key>Info.plist:iPhone</key>
 		<string>&lt;key&gt;LSRequiresIPhoneOS&lt;/key&gt;

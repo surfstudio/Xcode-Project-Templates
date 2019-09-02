@@ -1,8 +1,9 @@
 //
-//  XCTestCase.swift
+//  ___FILENAME___
+//  ___PACKAGENAME___
 //
-//  Created by Ivan Smetanin on 30/01/2019.
-//  Copyright © 2019 Surf. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  ___COPYRIGHT___
 //
 
 import XCTest
