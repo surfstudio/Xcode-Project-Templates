@@ -17,9 +17,9 @@
     <key>Nodes</key>
     <array>
         <string>Resources/Strings/Localizable.strings</string>
-		<string>Resources/Images/Assets.swift</string>
-		<string>Resources/Fonts/Fonts.swift</string>
-		<string>Resources/Strings/Strings.swift</string>
+        <string>Resources/Images/Assets.swift</string>
+        <string>Resources/Fonts/Fonts.swift</string>
+        <string>Resources/Strings/Strings.swift</string>
         <string>Resources/Colors/Colors.swift</string>
         <string>../swiftgen.yml</string>
         <string>../.swiftlint.yml</string>
