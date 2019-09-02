@@ -282,7 +282,7 @@
 		<string>../.gitignore</string>
 		<string>Third Party/.gitkeep</string>
 		<string>Services/.gitkeep</string>
-		<string>User Stories/.gitkeep</string>
+		<string>Flows/.gitkeep</string>
 		<string>Resources/Strings/.gitkeep</string>
 		<string>Resources/Images/.gitkeep</string>
 		<string>Resources/Constants/.gitkeep</string>
@@ -458,10 +458,10 @@
 			<key>TargetIndices</key>
 			<array/>
 		</dict>
-		<key>User Stories/.gitkeep</key>
+		<key>Flows/.gitkeep</key>
 		<dict>
 			<key>Group</key>
-			<string>User Stories</string>
+			<string>Flows</string>
 			<key>Path</key>
 			<string>../.gitkeep</string>
 			<key>TargetIndices</key>

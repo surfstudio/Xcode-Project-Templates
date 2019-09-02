@@ -29,8 +29,8 @@ test_group_path: ___PACKAGENAME___Tests/Tests/Flows
 podfile_path: Podfile
 
 ### Catalogs
-# catalogs:
-# - 'https://github.com/surfstudio/generamba-templates'
+catalogs:
+- 'https://github.com/surfstudio/generamba-templates'
 
 ### Templates
 templates:

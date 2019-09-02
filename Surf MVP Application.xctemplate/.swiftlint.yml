@@ -84,7 +84,7 @@ custom_rules:
         severity: error
 
     realm_in_ui:
-        included: "Screens/.*.swift|User Stories/.*.swift"
+        included: "Screens/.*.swift|Flows/.*.swift"
         name: "Realm can be used only in services"
         regex: "Realm"
         message: "Realm can be used only in serivces"
@@ -104,17 +104,10 @@ custom_rules:
         message: "View protocol should contains only methods"
         severity: error
 
-    router_protocol_error:
-        included: ".*RouterInput.swift"
-        name: "View in Router protocol"
-        regex: "view|View"
-        message: "Router protocol methods should contains `Module` instead `View`"
-        severity: error
-
     open_iboutlets:
         included: ".*.swift"
         name: "IBOutlet opening"
-        regex: "@IBOutlet weak var"
+        regex: "@IBOutlet ?(weak){0,1} var"
         message: "IBOutlet should be private or fileprivate"
         severity: error
 
@@ -125,7 +118,7 @@ custom_rules:
         message: "IBAction should be private or fileprivate"
         severity: error
         
-     mark_newlines:
+    mark_newlines:
         included: ".*.swift"
         name: "MARK newlines surrounding"
         regex: '(([}{)\w \t]+\n{1}[ \t]*)(\/\/ MARK: - [\w ]*))|((\/\/ MARK: - [\w ]*)(\n{1}[ \t]*\w+))'

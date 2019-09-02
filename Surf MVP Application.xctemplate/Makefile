@@ -7,7 +7,7 @@ init:
 	-bundle install --path .bundle
 	-bundle exec pod repo update
 	-bundle exec pod install
-	# -bundle exec generamba template install
+	-bundle exec generamba template install
 
 	# Install git hooks
 	mkdir -p .git/hooks
