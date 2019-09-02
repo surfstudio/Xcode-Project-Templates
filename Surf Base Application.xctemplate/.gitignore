@@ -12,7 +12,7 @@ build/
 xcuserdata
 *.xccheckout
 *.moved-aside
-DerivedData
+DerivedData/
 *.hmap
 *.ipa
 *.xcuserstate
@@ -25,7 +25,8 @@ DerivedData
 # you should judge for yourself, the pros and cons are mentioned at:
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
-# Pods/
+Podfile.lock
+Pods/
 
 # Exported environment variables for XcodeCoverage
 env.sh
@@ -39,6 +40,7 @@ fastlane/test_output
 fastlane/Provisioning
 fastlane/Build
 fastlane/report.xml
+buildData
 
 # Bundler
 .bundle/
