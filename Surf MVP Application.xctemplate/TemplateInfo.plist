@@ -17,9 +17,10 @@
     <key>Nodes</key>
     <array>
         <string>Resources/Strings/Localizable.strings</string>
-		<string>Resources/Constants/Assets.swift</string>
-		<string>Resources/Constants/Fonts.swift</string>
-		<string>Resources/Constants/Strings.swift</string>
+		<string>Resources/Images/Assets.swift</string>
+		<string>Resources/Fonts/Fonts.swift</string>
+		<string>Resources/Strings/Strings.swift</string>
+        <string>Resources/Colors/Colors.swift</string>
         <string>../swiftgen.yml</string>
         <string>../.swiftlint.yml</string>
         <string>../Makefile</string>
@@ -42,41 +43,45 @@
                 <key>TargetIndices</key>
                 <array/>
             </dict>
-        <key>Resources/Constants/Assets.swift</key>
+        <key>Resources/Images/Assets.swift</key>
             <dict>
                 <key>Group</key>
                 <array>
                     <string>Resources</string>
-                    <string>Constants</string>
+                    <string>Images</string>
                 </array>
                 <key>Path</key>
                 <string>Assets.swift</string>
-                <key>TargetIndices</key>
-                <array/>
             </dict>
-        <key>Resources/Constants/Fonts.swift</key>
+        <key>Resources/Fonts/Fonts.swift</key>
             <dict>
                 <key>Group</key>
                 <array>
                     <string>Resources</string>
-                    <string>Constants</string>
+                    <string>Fonts</string>
                 </array>
                 <key>Path</key>
                 <string>Fonts.swift</string>
-                <key>TargetIndices</key>
-                <array/>
             </dict>
-        <key>Resources/Constants/Strings.swift</key>
+        <key>Resources/Strings/Strings.swift</key>
             <dict>
                 <key>Group</key>
                 <array>
                     <string>Resources</string>
-                    <string>Constants</string>
+                    <string>Strings</string>
                 </array>
                 <key>Path</key>
                 <string>Strings.swift</string>
-                <key>TargetIndices</key>
-                <array/>
+            </dict>
+        <key>Resources/Colors/Colors.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Resources</string>
+                    <string>Colors</string>
+                </array>
+                <key>Path</key>
+                <string>Colors.swift</string>
             </dict>
         <key>../swiftgen.yml</key>
             <dict>
@@ -94,6 +99,8 @@
             </dict>
     	<key>../Makefile</key>
             <dict>
+                <key>TargetIndices</key>
+                <array/>
                 <key>Path</key>
                 <string>Makefile</string>
                 <key>Group</key>
@@ -101,6 +108,8 @@
             </dict>
         <key>../Gemfile</key>
             <dict>
+                <key>TargetIndices</key>
+                <array/>
                 <key>Path</key>
                 <string>Gemfile</string>
                 <key>Group</key>
@@ -108,6 +117,8 @@
             </dict>
         <key>../commit-msg</key>
             <dict>
+                <key>TargetIndices</key>
+                <array/>
                 <key>Path</key>
                 <string>commit-msg</string>
                 <key>Group</key>

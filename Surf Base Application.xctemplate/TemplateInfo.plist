@@ -278,6 +278,7 @@
 	<key>Nodes</key>
 	<array>
 		<string>../fastlane</string>
+		<string>../ci</string>
 		<string>../Podfile</string>
 		<string>../.gitignore</string>
 		<string>Third Party/.gitkeep</string>
@@ -295,6 +296,7 @@
 		<string>Library/Reusable Layer/.gitkeep</string>
 		<string>Library/Protocols/.gitkeep</string>
 		<string>Application/LaunchScreen.xib</string>
+		<string>___PACKAGENAME___Tests/XCTestCase.swift</string>
 		<string>Info.plist:iPhone</string>
 		<string>Info.plist:UIRequiredDeviceCapabilities:base</string>
 		<string>Info.plist:LaunchScreen</string>
@@ -305,6 +307,15 @@
 		<dict>
 			<key>Path</key>
 			<string>fastlane</string>
+			<key>Group</key>
+			<array>
+				<string>Non-iOS Resources</string>
+			</array>
+		</dict>
+		<key>../ci</key>
+		<dict>
+			<key>Path</key>
+			<string>ci</string>
 			<key>Group</key>
 			<array>
 				<string>Non-iOS Resources</string>
@@ -491,6 +502,13 @@
 			<string>Application</string>
 			<key>Path</key>
 			<string>LaunchScreen.xib</string>
+		</dict>
+		<key>___PACKAGENAME___Tests/XCTestCase.swift</key>
+		<dict>
+			<key>Group</key>
+			<string>___PACKAGENAME___Tests</string>
+			<key>Path</key>
+			<string>XCTestCase.swift</string>
 		</dict>
 		<key>Info.plist:iPhone</key>
 		<string>&lt;key&gt;LSRequiresIPhoneOS&lt;/key&gt;
