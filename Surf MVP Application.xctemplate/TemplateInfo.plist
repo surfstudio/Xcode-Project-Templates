@@ -28,6 +28,12 @@
         <string>../commit-msg</string>
         <string>../Rambafile</string>
         <string>../README.md</string>
+        <string>Library/Base Classes/BaseCoordinator.swift</string>
+        <string>Library/Extensions/UIKit/UIApplication.swift</string>
+        <string>Library/Protocols/Coordinator.swift</string>
+        <string>Library/Protocols/Presentable.swift</string>
+        <string>Library/Protocols/Router.swift</string>
+        <string>Library/Routers/MainRouter.swift</string>
     </array>
     <key>Definitions</key>
     <dict>
@@ -141,7 +147,68 @@
                 <string>README.md</string>
                 <key>Group</key>
                 <string>Non-iOS Resources</string>
-            </dict> 
+            </dict>
+        <key>Library/Base Classes/BaseCoordinator.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Base Classes</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/BaseCoordinator.swift</string>
+            </dict>
+        <key>Library/Extensions/UIKit/UIApplication.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Extensions</string>
+                    <string>UIKit</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/UIApplication.swift</string>
+            </dict>
+        <key>Library/Protocols/Coordinator.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Protocols</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/Coordinator.swift</string>
+            </dict>
+        <key>Library/Protocols/Presentable.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Protocols</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/Presentable.swift</string>
+            </dict>
+        <key>Library/Protocols/Router.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Protocols</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/Router.swift</string>
+            </dict>
+        <key>Library/Routers/MainRouter.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Routers</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/MainRouter.swift</string>
+            </dict>
     </dict>
     <key>Targets</key>
         <array>

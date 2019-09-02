@@ -295,6 +295,7 @@
 		<string>Library/Extensions/.gitkeep</string>
 		<string>Library/Reusable Layer/.gitkeep</string>
 		<string>Library/Protocols/.gitkeep</string>
+		<string>Library/Routers/.gitkeep</string>
 		<string>Application/LaunchScreen.xib</string>
 		<string>Info.plist:iPhone</string>
 		<string>Info.plist:UIRequiredDeviceCapabilities:base</string>
@@ -390,6 +391,18 @@
 			<array>
 				<string>Library</string>
 				<string>Protocols</string>
+			</array>
+			<key>Path</key>
+			<string>.gitkeep</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Library/Routers/.gitkeep</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Library</string>
+				<string>Routers</string>
 			</array>
 			<key>Path</key>
 			<string>.gitkeep</string>
