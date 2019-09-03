@@ -94,10 +94,6 @@ protocol ModuleTransitionable: class {
     ///   - hideTabBar: Pass true to hide a tab bar.
     func push(module: UIViewController, animated: Bool, hideTabBar: Bool)
 
-    /// Adds the child module to a current parent module.
-    ///
-    /// - Parameter module: Module that should be added as a child.
-    func addChild(module: UIViewController)
 }
 
 extension ModuleTransitionable where Self: UIViewController {
@@ -131,20 +127,4 @@ extension ModuleTransitionable where Self: UIViewController {
         push(module: module, animated: animated)
     }
 
-    func addChild(module: UIViewController) {
-        // Add child
-        self.addChild(module)
-        view.addSubview(module.view)
-        module.didMove(toParent: self)
-
-        // Layout
-        module.view.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            module.view.topAnchor.constraint(equalTo: view.safeTopAnchor, constant: 0),
-            module.view.bottomAnchor.constraint(equalTo: view.safeBottomAnchor, constant: 0),
-            module.view.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor, constant: 0),
-            module.view.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor, constant: 0)
-        ])
-    }
 }

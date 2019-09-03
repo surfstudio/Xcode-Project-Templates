@@ -18,9 +18,9 @@ init:
 build:
 	bundle exec fastlane build clean:true
 
-## Used to create a new module. Example: make screen modName=<ModuleName> flow=<FlowName>
+## Used to create a new module. Example: make screen modName=<ModuleName>
 screen:
-	bundle exec generamba gen $(modName) surf_mvp_coordinatable_module --module_path '___PACKAGENAME___/Flows/$(flow)' --test_path '___PACKAGENAME___Tests/Tests/Flows/$(flow)'
+	bundle exec generamba gen $(modName) surf_mvp_module
 
 ## Run tests
 test:

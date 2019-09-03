@@ -7,6 +7,7 @@ mkdir -p "${installDirectory}"
 
 cp -R "Surf Base Application.xctemplate" "${installDirectory}"
 cp -R "Surf MVP Application.xctemplate" "${installDirectory}"
+cp -R "Surf MVP and Coordinators Application.xctemplate" "${installDirectory}"
 cp -R "Surf Application Unit Test Base.xctemplate" "${installDirectory}"
 
 echo "Templates installed to ${installDirectory}"
