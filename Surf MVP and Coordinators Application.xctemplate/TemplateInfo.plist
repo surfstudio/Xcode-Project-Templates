@@ -5,7 +5,7 @@
     <key>Kind</key>
     <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
     <key>Identifier</key>
-    <string>ru.surfstudio.dt.unit.SurfMVPApplication</string>
+    <string>ru.surfstudio.dt.unit.SurfMVPAndCoordinatorsApplication</string>
     <key>Ancestors</key>
     <array>
         <string>ru.surfstudio.dt.unit.surfApplicationBase</string>
@@ -16,7 +16,7 @@
     <string></string>
     <key>Nodes</key>
     <array>
-        <string>User Stories/.gitkeep</string>
+        <string>Flows/.gitkeep</string>
         <string>Resources/Strings/Localizable.strings</string>
         <string>Resources/Images/Assets.swift</string>
         <string>Resources/Fonts/Fonts.swift</string>
@@ -29,14 +29,20 @@
         <string>../commit-msg</string>
         <string>../Rambafile</string>
         <string>../README.md</string>
-        <string>Library/Protocols/ModuleTrasitionable.swift</string>
+        <string>Library/Base Classes/BaseCoordinator.swift</string>
+        <string>Library/Extensions/UIKit/UIApplication.swift</string>
+        <string>Library/Protocols/Coordinator.swift</string>
+        <string>Library/Protocols/Presentable.swift</string>
+        <string>Library/Protocols/Router.swift</string>
+        <string>Library/Routers/MainRouter.swift</string>
+        <string>Application/DeepLinkOption.swift</string>
     </array>
     <key>Definitions</key>
     <dict>
-        <key>User Stories/.gitkeep</key>
+        <key>Flows/.gitkeep</key>
             <dict>
                 <key>Group</key>
-                <string>User Stories</string>
+                <string>Flows</string>
                 <key>Path</key>
                 <string>../.gitkeep</string>
                 <key>TargetIndices</key>
@@ -153,7 +159,28 @@
                 <key>Group</key>
                 <string>Non-iOS Resources</string>
             </dict>
-        <key>Library/Protocols/ModuleTrasitionable.swift</key>
+        <key>Library/Base Classes/BaseCoordinator.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Base Classes</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/BaseCoordinator.swift</string>
+            </dict>
+        <key>Library/Extensions/UIKit/UIApplication.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Extensions</string>
+                    <string>UIKit</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/UIApplication.swift</string>
+            </dict>
+        <key>Library/Protocols/Coordinator.swift</key>
             <dict>
                 <key>Group</key>
                 <array>
@@ -161,7 +188,46 @@
                     <string>Protocols</string>
                 </array>
                 <key>Path</key>
-                <string>Support/ModuleTrasitionable.swift</string>
+                <string>CoordinatorsSupport/Coordinator.swift</string>
+            </dict>
+        <key>Library/Protocols/Presentable.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Protocols</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/Presentable.swift</string>
+            </dict>
+        <key>Library/Protocols/Router.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Protocols</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/Router.swift</string>
+            </dict>
+        <key>Library/Routers/MainRouter.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Library</string>
+                    <string>Routers</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/MainRouter.swift</string>
+            </dict>
+        <key>Application/DeepLinkOption.swift</key>
+            <dict>
+                <key>Group</key>
+                <array>
+                    <string>Application</string>
+                </array>
+                <key>Path</key>
+                <string>CoordinatorsSupport/DeepLinkOption.swift</string>
             </dict>
     </dict>
     <key>Targets</key>

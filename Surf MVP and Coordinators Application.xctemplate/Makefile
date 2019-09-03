@@ -18,9 +18,17 @@ init:
 build:
 	bundle exec fastlane build clean:true
 
+## Used to create a new coordinator with folder for a new flow. Example: make coordinator modName=<CoordinatorName>
+coordinator:
+	bundle exec generamba gen $(modName) surf_mvp_coordinator
+
 ## Used to create a new module. Example: make screen modName=<ModuleName> flow=<FlowName>
 screen:
 	bundle exec generamba gen $(modName) surf_mvp_coordinatable_module --module_path '___PACKAGENAME___/Flows/$(flow)' --test_path '___PACKAGENAME___Tests/Tests/Flows/$(flow)'
+
+## Used to create a new alert. Example: make alert modName=<AlertName> flow=<FlowName>
+alert:
+	bundle exec generamba gen $(modName) surf_mvp_coordinatable_alert --module_path '___PACKAGENAME___/Flows/$(flow)' --test_path '___PACKAGENAME___Tests/Tests/Flows/$(flow)'
 
 ## Run tests
 test:

@@ -283,7 +283,6 @@
 		<string>../.gitignore</string>
 		<string>Third Party/.gitkeep</string>
 		<string>Services/.gitkeep</string>
-		<string>Flows/.gitkeep</string>
 		<string>Resources/Strings/.gitkeep</string>
 		<string>Resources/Images/.gitkeep</string>
 		<string>Resources/Constants/.gitkeep</string>
@@ -476,15 +475,6 @@
 				<string>Resources</string>
 				<string>Fonts</string>
 			</array>
-			<key>Path</key>
-			<string>../.gitkeep</string>
-			<key>TargetIndices</key>
-			<array/>
-		</dict>
-		<key>Flows/.gitkeep</key>
-		<dict>
-			<key>Group</key>
-			<string>Flows</string>
 			<key>Path</key>
 			<string>../.gitkeep</string>
 			<key>TargetIndices</key>
