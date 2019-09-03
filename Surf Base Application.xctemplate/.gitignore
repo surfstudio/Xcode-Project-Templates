@@ -45,3 +45,6 @@ buildData
 # Bundler
 .bundle/
 Gemfile.lock
+
+# Generamba
+Templates/

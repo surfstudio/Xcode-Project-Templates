@@ -12,6 +12,8 @@ class BaseCoordinator: Coordinator {
 
     var childCoordinators: [Coordinator] = []
 
+    // MARK: - Internal Methods
+
     func start() {
         start(with: nil)
     }
