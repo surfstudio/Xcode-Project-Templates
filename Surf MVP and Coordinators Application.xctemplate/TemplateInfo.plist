@@ -14,6 +14,84 @@
     <true/>
     <key>Description</key>
     <string></string>
+    <key>Options</key>
+    <array>
+        <dict>
+            <key>Identifier</key>
+            <string>useXib</string>
+            <key>Name</key>
+            <string>Use templates with Xib</string>
+            <key>NotPersisted</key>
+            <false/>
+            <key>SortOrder</key>
+            <integer>102</integer>
+            <key>Type</key>
+            <string>checkbox</string>
+            <key>Default</key>
+            <string>false</string>
+            <key>Units</key>
+            <dict>
+                <key>true</key>
+                <dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>../Makefile</string>
+                        <string>../Rambafile</string>
+                    </array>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>../Makefile</key>
+                            <dict>
+                                <key>TargetIndices</key>
+                                <array/>
+                                <key>Path</key>
+                                <string>Xib/Makefile</string>
+                                <key>Group</key>
+                                <string>Non-iOS Resources</string>
+                            </dict>
+                        <key>../Rambafile</key>
+                            <dict>
+                                <key>TargetIndices</key>
+                                <array/>
+                                <key>Path</key>
+                                <string>Xib/Rambafile</string>
+                                <key>Group</key>
+                                <string>Non-iOS Resources</string>
+                            </dict>
+                    </dict>
+                </dict>
+                <key>false</key>
+                <dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>../Makefile</string>
+                        <string>../Rambafile</string>
+                    </array>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>../Makefile</key>
+                            <dict>
+                                <key>TargetIndices</key>
+                                <array/>
+                                <key>Path</key>
+                                <string>Storyboard/Makefile</string>
+                                <key>Group</key>
+                                <string>Non-iOS Resources</string>
+                            </dict>
+                        <key>../Rambafile</key>
+                            <dict>
+                                <key>TargetIndices</key>
+                                <array/>
+                                <key>Path</key>
+                                <string>Storyboard/Rambafile</string>
+                                <key>Group</key>
+                                <string>Non-iOS Resources</string>
+                            </dict>
+                    </dict>
+                </dict>
+            </dict>
+        </dict>
+    </array>
     <key>Nodes</key>
     <array>
         <string>Flows/.gitkeep</string>
@@ -24,10 +102,8 @@
         <string>Resources/Colors/Colors.swift</string>
         <string>../swiftgen.yml</string>
         <string>../.swiftlint.yml</string>
-        <string>../Makefile</string>
         <string>../Gemfile</string>
         <string>../commit-msg</string>
-        <string>../Rambafile</string>
         <string>../README.md</string>
         <string>Library/Base Classes/BaseCoordinator.swift</string>
         <string>Library/Extensions/UIKit/UIApplication.swift</string>
@@ -114,14 +190,17 @@
                 <key>Group</key>
                 <string>Non-iOS Resources</string>
             </dict>
-    	<key>../Makefile</key>
+    	
+        <key>../Makefile_xib</key>
             <dict>
                 <key>TargetIndices</key>
                 <array/>
                 <key>Path</key>
-                <string>Makefile</string>
+                <string>Xib/Makefile</string>
                 <key>Group</key>
                 <string>Non-iOS Resources</string>
+                <key>Name</key>
+                <string>Makefile</string>
             </dict>
         <key>../Gemfile</key>
             <dict>
@@ -141,14 +220,16 @@
                 <key>Group</key>
                 <string>Non-iOS Resources</string>
             </dict>
-        <key>../Rambafile</key>
+        <key>../Rambafile_xib</key>
             <dict>
                 <key>TargetIndices</key>
                 <array/>
                 <key>Path</key>
-                <string>Rambafile</string>
+                <string>Xib/Rambafile</string>
                 <key>Group</key>
                 <string>Non-iOS Resources</string>
+                <key>Name</key>
+                <string>Rambafile</string>
             </dict> 
         <key>../README.md</key>
             <dict>
