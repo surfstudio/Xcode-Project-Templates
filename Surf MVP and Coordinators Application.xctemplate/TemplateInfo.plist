@@ -133,8 +133,6 @@
                 </array>
                 <key>Path</key>
                 <string>Localizable.strings</string>
-                <key>TargetIndices</key>
-                <array/>
             </dict>
         <key>Resources/Images/Assets.swift</key>
             <dict>
