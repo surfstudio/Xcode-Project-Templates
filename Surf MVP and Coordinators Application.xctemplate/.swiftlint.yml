@@ -84,7 +84,7 @@ custom_rules:
         severity: error
 
     realm_in_ui:
-        included: "Screens/.*.swift|Flows/.*.swift"
+        included: "Screens/.*.swift|Flows/.*.swift|User Stories/.*.swift"
         name: "Realm can be used only in services"
         regex: "Realm"
         message: "Realm can be used only in serivces"
