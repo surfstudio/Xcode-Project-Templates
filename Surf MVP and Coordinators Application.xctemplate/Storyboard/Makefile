@@ -2,7 +2,7 @@ init:
 	# Install bundler if not installed
 	if ! gem spec bundler > /dev/null 2>&1; then\
   		echo "bundler gem is not installed! Run gem install bundler to install it";\
-  		-sudo gem install bundler;\
+  		-sudo gem install bundler -v "1.17.3";\
 	fi
 	-bundle install --path .bundle
 	-bundle exec pod repo update

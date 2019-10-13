@@ -1,5 +1,5 @@
 //
-//  Copyright © 2018 Surf. All rights reserved.
+//  ___COPYRIGHT___
 //
 
 import Foundation

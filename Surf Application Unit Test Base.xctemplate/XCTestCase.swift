@@ -1,5 +1,5 @@
 //
-//  Copyright © 2019 Surf. All rights reserved.
+//  ___COPYRIGHT___
 //
 
 import XCTest
