@@ -15,10 +15,6 @@ pipeline.getStage(pipeline.UNIT_TEST).body = {
 }
 pipeline.getStage(pipeline.UNIT_TEST).strategy = StageStrategy.FAIL_WHEN_STAGE_ERROR
 pipeline.getStage(pipeline.INSTRUMENTATION_TEST).strategy = StageStrategy.SKIP_STAGE
-pipeline.getStage(pipeline.STATIC_CODE_ANALYSIS).body = {
-	CommonUtil.shWithRuby(this, "make lint")
-}
-pipeline.getStage(pipeline.STATIC_CODE_ANALYSIS).strategy = StageStrategy.FAIL_WHEN_STAGE_ERROR
 
 //run
 pipeline.run()
