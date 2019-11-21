@@ -15,8 +15,9 @@ platform :ios do
 
   workspace_file = '___PACKAGENAME___.xcworkspace'
   project_file = '___PACKAGENAME___.xcodeproj'
-  main_scheme = '___PACKAGENAME___'
+  prod_scheme = '___PACKAGENAME___'
   bundle_name = "___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___.___VARIABLE_productName:RFC1034Identifier___"
+  derived_data_path = "./buildData"
 
   before_all do |lane, options|  
     # ensure_git_status_clean 
@@ -27,19 +28,30 @@ platform :ios do
   - clean: Pass **true** if you need to clean project before build
   "
   lane :build do |options|
-    sigh(
-      development: true,
-      app_identifier: bundle_name
-    )
-    
     xcodebuild(
       workspace: workspace_file,
-      scheme: main_scheme,
+      scheme: prod_scheme,
       configuration: "Debug",
       clean: options[:clean],
       build: true,
-      destination: "generic/platform=iOS\" CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=\""
+      destination: "generic/platform=iOS\" CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=\"",
+      xcargs: "-sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build-for-testing",
+      derivedDataPath: derived_data_path
     )
+  end
+
+  desc "Run tests"
+  lane :tests do
+    run_tests(
+      workspace: workspace_file,
+      devices: ["iPhone SE"],
+      scheme: prod_scheme,
+      code_coverage: false,
+      test_without_building: true,
+      skip_build: true,
+      derived_data_path: derived_data_path,
+      output_types: "html,junit"
+  )
   end
 
   desc "Update build number, set tag and push version bump commit to the develop branch if needed"
@@ -57,39 +69,31 @@ platform :ios do
 
     build_number = options[:type_v]
     if not build_number.nil?
-      increment_build_number_in_plist(build_number: build_number)
+      increment_build_number_in_plist(build_number: build_number, target: prod_scheme)
     else
-      increment_build_number_in_plist()
+      increment_build_number_in_plist(target: prod_scheme)
     end
 
-    increment_version_number(version_number: options[:version_number])
+    increment_version_number_in_plist(version_number: options[:version_number], target: prod_scheme)
     
     commit_version_bump(
       xcodeproj: project_file,
       force: true
     )
 
-    tag_label = get_version_number_from_plist()
+    tag_label = get_version_number_from_plist(target: prod_scheme)
 
     type = options[:type]
     typeIndex = options[:type_v]
     if not type.nil?
-      tag_label = "dev_" + tag_label + "-" + type + "" + typeIndex
+      tag_label = "v" + tag_label + "-" + type + "" + typeIndex
     end
 
     add_git_tag(
       tag: tag_label
     )
 
-    skip_push_opt = options[:skip_push]
-    needs_to_push = skip_push_opt.to_s.empty? || skip_push_opt.to_s == "false"
-
-    if needs_to_push
-      sh("git push", error_callback: ->(result) { 
-        UI.error "git push failed with result: #{result}"
-      })
-      sh("git push origin --tags")
-    end
+    sh("git push && git push origin --tags")
   end
 
   desc "Update build number, set tag and push version bump commit to the develop branch if needed"
@@ -98,20 +102,19 @@ platform :ios do
   - skip_push: Pass **true** if you need to skip push commits to the repository. The default is **false**
   "
   lane :prepare_for_beta do |options|
-    current_version = get_version_number_from_plist
+    current_version = get_version_number_from_plist(target: prod_scheme)
     type = options[:type]
-    tag_prefix = current_version + "-" + type
+    tag_prefix = "v" + current_version + "-" + type
 
-    last_tag_index = get_build_number_from_plist()
-    result_tag_index = last_tag_index.to_i + 1
+    current_build_number = get_build_number_from_plist(target: prod_scheme)
+    result_tag_index = current_build_number.to_i + 1
     build_number = tag_prefix + result_tag_index.to_s
 
     prepare_for_integration(
       version_number: current_version,
       type: options[:type],
       type_v: result_tag_index.to_s,
-      build_number: build_number,
-      skip_push: options[:skip_push]
+      build_number: build_number
     )
   end
 
@@ -158,32 +161,21 @@ platform :ios do
   desc "Parameters:
   - destination: Type of the build which will be submitted
   "
-  lane :beta do |options|
-    type = options[:destination]
-    bundle_id = bundle_name
-    scheme = main_scheme
-
+  lane :beta do
     cocoapods(use_bundle_exec:true)
-
-    sigh(
-      development: true,
-      app_identifier: bundle_name
-    )
-
     gym(
-      scheme: scheme,
+      scheme: prod_scheme,
       configuration: "Debug",
       clean: true,
       include_bitcode: false,
       export_options: { 
-        compileBitcode: false,
+        compileBitcode: false
       },
       export_method: "development",
+      xcargs: "-allowProvisioningUpdates"
     )
-
     upload_to_fabric
-
-    sh("rm ../*.mobileprovision")
+    refresh_dsyms()
   end
 
   desc "Upload a new Release Build to iTunesConnect"
@@ -222,16 +214,14 @@ platform :ios do
       api_token: "PUT TOKEN HERE",
       build_secret: "PUT BUILD SECRET HERE",
       emails: ["PUT_EMAILS_HERE"],
-      notes: ENV[main_scheme + "_iOS_Crashlytics_Changelog"]
+      notes: ENV[prod_scheme + "_iOS_Crashlytics_Changelog"]
     )
   end
 
 
   desc "Send dSYMS to Fabric"
   lane :refresh_dsyms do |options|
-    bundle_id = bundle_name
-
-    download_dsyms(app_identifier: bundle_id, version: 'latest') # Download dSYM files from iTC
+    download_dsyms(app_identifier: bundle_name, version: 'latest') # Download dSYM files from iTC
     upload_symbols_to_crashlytics # Upload them to Crashlytics
     clean_build_artifacts # Delete the local dSYM files
   end

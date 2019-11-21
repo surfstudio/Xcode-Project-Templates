@@ -23,6 +23,7 @@
 	<array>
 		<string>Tests/.gitkeep</string>
 		<string>Resources/.gitkeep</string>
+		<string>../XCTestCase.swift</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
@@ -47,6 +48,11 @@
 			<string>.gitkeep</string>
 			<key>TargetIndices</key>
 			<array/>
+		</dict>
+		<key>../XCTestCase.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>XCTestCase.swift</string>
 		</dict>
 	</dict>
 </dict>

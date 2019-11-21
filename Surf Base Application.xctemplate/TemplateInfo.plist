@@ -278,11 +278,11 @@
 	<key>Nodes</key>
 	<array>
 		<string>../fastlane</string>
+		<string>../ci</string>
 		<string>../Podfile</string>
 		<string>../.gitignore</string>
 		<string>Third Party/.gitkeep</string>
 		<string>Services/.gitkeep</string>
-		<string>User Stories/.gitkeep</string>
 		<string>Resources/Strings/.gitkeep</string>
 		<string>Resources/Images/.gitkeep</string>
 		<string>Resources/Constants/.gitkeep</string>
@@ -294,6 +294,7 @@
 		<string>Library/Extensions/.gitkeep</string>
 		<string>Library/Reusable Layer/.gitkeep</string>
 		<string>Library/Protocols/.gitkeep</string>
+		<string>Library/Routers/.gitkeep</string>
 		<string>Application/LaunchScreen.xib</string>
 		<string>Info.plist:iPhone</string>
 		<string>Info.plist:UIRequiredDeviceCapabilities:base</string>
@@ -305,6 +306,15 @@
 		<dict>
 			<key>Path</key>
 			<string>fastlane</string>
+			<key>Group</key>
+			<array>
+				<string>Non-iOS Resources</string>
+			</array>
+		</dict>
+		<key>../ci</key>
+		<dict>
+			<key>Path</key>
+			<string>ci</string>
 			<key>Group</key>
 			<array>
 				<string>Non-iOS Resources</string>
@@ -386,6 +396,18 @@
 			<key>TargetIndices</key>
 			<array/>
 		</dict>
+		<key>Library/Routers/.gitkeep</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Library</string>
+				<string>Routers</string>
+			</array>
+			<key>Path</key>
+			<string>.gitkeep</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
 		<key>Models/Entity/.gitkeep</key>
 		<dict>
 			<key>Group</key>
@@ -453,15 +475,6 @@
 				<string>Resources</string>
 				<string>Fonts</string>
 			</array>
-			<key>Path</key>
-			<string>../.gitkeep</string>
-			<key>TargetIndices</key>
-			<array/>
-		</dict>
-		<key>User Stories/.gitkeep</key>
-		<dict>
-			<key>Group</key>
-			<string>User Stories</string>
 			<key>Path</key>
 			<string>../.gitkeep</string>
 			<key>TargetIndices</key>
